@@ -1,29 +1,27 @@
 # Site settings
-title: BoHu
-url: "http://zhaoyuxiang.cn/blog"    # the protocol and hostname of your site, eg. `http://zhaoyuxiang.cn/blog`
-baseurl: "/bohu-jekyll-theme" # the prefix of your site uri, eg. `/bohu-jekyll-theme` or just one slash `/`
+title: 朝花夕拾
+url: "https://kinshines.github.io"
+baseurl: "/"
 #timezone: Asia/Shanghai
-description: 天道总司的个人博客网站,前端HTML、HTML5、CSS、CSS3、JavaScript、JQuery等编程经验总结分享。
+description: 王超宇的个人博客网站，前端HTML、HTML5、CSS、CSS3、JavaScript、JQuery，后端asp.net等编程经验总结分享。
 # Your information
-email: me@zhaoyuxiang.cn
-author: Clark #yourname #天道总司
-place: yourhometown #杭州
-domain: yourdoamain #互联网
-company: yourcompany #Jeeyoo
-position: yourjob #Technical Support
-school: yourschool #浙江科技学院
-major: yourmajoy #测控技术与仪器
-resume: "http://zhaoyuxiang.cn/cv"
-profile: Time is money. #yourmotto #聪明在于勤奋，天才在于积累。
-twitter_username: zyx19936688
-weibo_username:  zhaoyuxiang
-github_username:  Clark-Zhao
+email: chaoyuweb@gmail.com
+author: Kinshines
+place: 青岛
+domain: 互联网
+company: HaiMaWan
+position: ".net developer"
+school: 青岛大学
+major: 电子信息工程
+resume: "https://kinshines.github.io/cv"
+profile: 无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。
+twitter_username: chaoyuweb
+weibo_username:  chaoyuweb
+github_username:  kinshines
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
-disqus_shortname: zhaoyuxiang   
-# get one: https://disqus.com/admin/signup/
-# duoshuo_shortname: clark-zhao  
+duoshuo_shortname: kinshines 
 # get one: http://duoshuo.com/create-site/
 
 permalink: /archivers/:title
