@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 html, body, header, main, footer, h1, p, nav, div, ul, li, a, img, span {
   margin: 0;
   padding: 0;
@@ -41,7 +41,7 @@ a {
   #header .title {
     height: inherit;
     line-height: 45px;
-    font-size: 45px;
+    font-size: 25px;
     font-weight: normal;
     color: #fff;
     float: left; }
