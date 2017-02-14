@@ -1,4 +1,4 @@
-﻿# BoHu 
+# BoHu 
 
 It's a simple jekyll blog theme. 
   

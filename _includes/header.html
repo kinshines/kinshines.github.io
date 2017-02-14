@@ -1,6 +1,6 @@
   <header id="header">
     <div class="headerWrap clearfix">
-      <a class="myFont title css2dcc4b9955748" href="{{ "/home" | prepend: site.baseurl }}">Kinshines</a>
+      <a class="myFont title css2dcc4b9955748" href="{{ "/home" | prepend: site.baseurl }}">{{ site.title }}</a>
 
       <nav>
         <ul>
@@ -30,11 +30,11 @@
 <script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/search/js/cb-search.js" | prepend: site.baseurl }}"></script>
 
-        <a href="https://kinshines.github.io/cv" class="master">
-            <div class="avatarWrap">
-                <img src="{{ " />assets/avatar.jpg" | prepend: site.baseurl }}" alt="Kinshines" style="max-width: 27px;" />
-            </div><span class="myFont css2dcc4b9955748">Kinshines</span>
-        </a>
+      <a href="{{ site.resume }}" class="master">
+        <div class="avatarWrap">
+          <img src="{{ "/assets/avatar.jpg" | prepend: site.baseurl }}" alt="{{ site.author }}" style="max-width: 27px;" />
+        </div><span class="myFont css2dcc4b9955748">{{ site.author }}</span>
+      </a>
     </div>
   </header>
 
