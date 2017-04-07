@@ -31,7 +31,7 @@ gems:
  - jemoji
 
 # Build settings
-paginate: 2
+paginate: 5
 paginate_path: "/page:num"
 
 highlighter: rouge
