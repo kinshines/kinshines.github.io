@@ -16,6 +16,16 @@ Web压缩是通过压缩传输包大小的方式提高客户端和服务器之�
 图片来源：<a href="http://www.sendung.de/2007-04-09/web-services-output-formats-and-gzip-compression/">Effects of GZip compression</a>
 
 目前在ASP.NET Web API上实现压缩有以下三种方式：
+
 1.IIS级别，在IIS中设置开启即可
-2.自定义的委托Handler
+2.自定义的委托Handler级别
 3.自定义的ActionFilter，可应用在Method级别，Controller级别甚至整个WebAPI级别
+
+## DotNetZip
+下面演示ActionFilter实现GZip压缩，前提要借助第三方库<a href="http://dotnetzip.codeplex.com/">DotNetZip library</a>
+Nuget获取：
+{% highlight js %}
+
+Install-Package DotNetZip
+
+{% endhight %}
