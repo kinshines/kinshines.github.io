@@ -24,8 +24,3 @@ Web压缩是通过压缩传输包大小的方式提高客户端和服务器之�
 ## DotNetZip
 下面演示ActionFilter实现GZip压缩，前提要借助第三方库<a href="http://dotnetzip.codeplex.com/">DotNetZip library</a>
 Nuget获取：
-{% highlight js %}
-
-Install-Package DotNetZip
-
-{% endhight %}
