@@ -20,7 +20,7 @@ Install-Package Jil
 {% endhighlight %}
 
 ### 创建 Jil MediaTypeFormatter
-{% highlight js %}
+{% highlight java %}
 
 public class JilFormatter : MediaTypeFormatter
 {
@@ -88,12 +88,27 @@ public class JilFormatter : MediaTypeFormatter
 {% endhighlight %}
 
 ### 替换默认的 JSON serializer
-在WebApiConfig的开头处添加如下代码：
+在WebApiConfig类的Register方法开头处添加如下代码：
 
-{% highlight js %}
+{% highlight java %}
 
 config.Formatters.RemoveAt(0);
 config.Formatters.Insert(0, new JilFormatter());
 
 {% endhighlight %}
 
+### 使用Json.Net
+C#里的json工具最常用的是Json.Net，当然也可以用Json.Net作为默认的序列化工具，原理同上。
+利用Nuget已有的资源
+{% highlight java %}
+
+Install-Package JsonNetMediaTypeFormatter
+
+{% endhighlight %}
+
+{% highlight java %}
+
+config.Formatters.RemoveAt(0);
+config.Formatters.Insert(0, new JsonNetMediaTypeFormatter());
+
+{% endhighlight %}
