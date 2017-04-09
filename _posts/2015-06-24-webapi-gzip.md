@@ -7,10 +7,24 @@ categories: webapi
 permalink: /archivers/WebAPI-GZip-Compression
 ---
 
-<p class="lead"> <a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes.</p>
 
-From [the project's readme](https://github.com/jekyll/jekyll/blob/master/README.markdown):
+<p class="lead">本文演示WebAPI 开启 GZip / Deflate 压缩以提高性能</p>
+压缩是一种缩小传输包大小的简单方法，从而提高客户端和服务器的传输效率。
+当前Web传输中有两种通用的成熟压缩算法：GZip 和 Deflate，这两种算法都能被浏览器识别而且在HTTP的响应中可以自动解压缩。
+下图展示了GZip压缩效果：
+![Compression](http://blog.developers.ba/wp-content/uploads/2014/06/compression.png "Compression")
+图片来源：<a href="http://www.sendung.de/2007-04-09/web-services-output-formats-and-gzip-compression/">Effects of GZip compression</a>
 
-> Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
+那么怎样在ASP.NET Web API上实现压缩呢：
+1.IIS级别，在IIS中设置开启即可
+2.自定义的委托Handler
+3.自定义的ActionFilter，可应用在Method级别，Controller级别甚至整个WebAPI级别
 
-It's an immensely useful tool. Find out more by [visiting the project on GitHub](https://github.com/jekyll/jekyll).
+## DotNetZip
+下面演示ActionFilter实现GZip压缩，前提要借助第三方库<a href="http://dotnetzip.codeplex.com/">DotNetZip library</a>
+Nuget获取：
+{% highlight js %}
+
+Install-Package DotNetZip
+
+{% endhight %}
