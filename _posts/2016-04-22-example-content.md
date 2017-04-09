@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Example content
-author: CK
+author: kinshines
 date:   2016-04-22
 categories: Demo
 permalink: /archivers/Example-content
