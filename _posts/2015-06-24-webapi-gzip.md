@@ -14,17 +14,3 @@ permalink: /archivers/WebAPI-GZip-Compression
 下图展示了GZip压缩效果：
 ![Compression](http://blog.developers.ba/wp-content/uploads/2014/06/compression.png "Compression")
 图片来源：<a href="http://www.sendung.de/2007-04-09/web-services-output-formats-and-gzip-compression/">Effects of GZip compression</a>
-
-那么怎样在ASP.NET Web API上实现压缩呢：
-1.IIS级别，在IIS中设置开启即可
-2.自定义的委托Handler
-3.自定义的ActionFilter，可应用在Method级别，Controller级别甚至整个WebAPI级别
-
-## DotNetZip
-下面演示ActionFilter实现GZip压缩，前提要借助第三方库<a href="http://dotnetzip.codeplex.com/">DotNetZip library</a>
-Nuget获取：
-{% highlight js %}
-
-Install-Package DotNetZip
-
-{% endhight %}
