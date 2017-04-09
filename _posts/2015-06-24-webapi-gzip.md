@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Whats Jekyll?
+title: ASP.NET Web API 使用ActionFilter实现 GZip compression
 author: kinshines
-date:   2016-04-23
-categories: Demo
-permalink: /archivers/Whats-Jekyll
+date:   2015-06-24
+categories: webapi
+permalink: /archivers/WebAPI-GZip-Compression
 ---
 
 <p class="lead"> <a href="http://jekyllrb.com">Jekyll</a> is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes.</p>
