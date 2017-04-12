@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ASP.NET Web API 之 8 种提高Web性能的方法
+title: ASP.NET Web API 8种提高Web性能的方法
 author: kinshines
 date:   2016-07-16
 categories: webapi
