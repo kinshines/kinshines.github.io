@@ -2,7 +2,7 @@
 layout: post
 title: ASP.NET Web API 使用ActionFilter实现 GZip compression
 author: kinshines
-date:   2015-06-24
+date:   2016-06-24
 categories: webapi
 permalink: /archivers/WebAPI-GZip-Compression
 ---
