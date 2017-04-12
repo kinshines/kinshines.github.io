@@ -18,6 +18,11 @@ install-package unity
 
 2. 安装指定版本
 
-{% highlight ps %}
+{% highlight js %}
 install-package unity -version 3.5.14
+{% endhighlight %}
+
+3. 安装到指定的项目
+{% highlight js %}
+install-package unity -project XXXProjectName -version 3.5.14
 {% endhighlight %}
