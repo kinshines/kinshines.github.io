@@ -50,3 +50,12 @@ update-package unity -version 4.0.1
 get-package
 {% endhighlight %}
 可以加参数 -filter EntityFramework 筛选自己想要的包
+
+## 更改nuget资源位置
+<p class="lead">在VS中，nuget包资源会默认下载到各项目的packages文件夹下，如果项目很多，不便于对资源进行集中管理，可在解决方案同级目录下添加 nuget.config 文件，实现所有资源全部放在上级lib文件夹中</p>
+
+{% highlight js %}
+<settings>  
+<repositoryPath>..\lib</repositoryPath>  
+</settings>  
+{% endhighlight %}
