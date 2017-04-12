@@ -15,3 +15,9 @@ permalink: /archivers/NuGet-Command
 install-package unity
 
 {% endhighlight %}
+
+2. 安装指定版本
+
+{% highlight ps %}
+install-package unity -version 3.5.14
+{% endhighlight %}
