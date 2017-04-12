@@ -9,3 +9,9 @@ permalink: /archivers/NuGet-Command
 
 ### NuGet常用命令
 1. 安装最新版本
+
+{% highlight js %}
+
+install-package unity
+
+{% endhighlight %}
