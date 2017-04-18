@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 解决Microsoft.jQuery.Unobtrusive.Validation在IE浏览器下校验DateTime失败
+title: 解决Microsoft.jQuery.Unobtrusive.Validation在IE浏览器下校验DateTime失败的问题
 author: kinshines
 date:   2017-04-17
 categories: js
@@ -16,12 +16,12 @@ permalink: /archivers/Unobtrusive-Validation-IE-DateTime
 输入时间格式时，我们往往使用js时间选择器[Bootstrap 3 Datetimepicker](https://www.nuget.org/packages/Bootstrap.v3.Datetimepicker/)来选择输入，而非手动填写。
 此插件完全可以控制时间格式的有效性，因此可以去除Microsoft.jQuery.Unobtrusive.Validation对于date格式的校验。
 ### 解决方案
-1. 修改jquery.validate.unobtrusive.js源码，大概在372行的位置，移除：
+修改jquery.validate.unobtrusive.js源码，大概在372行的位置，移除：
 {% highlight js %}
 .addBool("date")
 {% endhighlight %}
 
-2. 修改jquery.validate.unobtrusive.min.js源码，移除：
+修改jquery.validate.unobtrusive.min.js源码，移除：
 {% highlight js %}
 .addBool("date")
 {% endhighlight %}
