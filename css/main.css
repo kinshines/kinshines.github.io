@@ -108,8 +108,6 @@ main {
     h2 a.post-link{
       font-size: 24px;
     }
-    .content .content-main .post-list h2 {
-      font-weight: bold !important; }
     .content .content-main .post-list li {
       list-style: none;
       padding: 10px 0;
