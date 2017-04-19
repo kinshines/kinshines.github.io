@@ -105,6 +105,9 @@ main {
     .content .content-main .post-link {
       display: inline-block;
       margin-top: 10px; }
+    a.post-link{
+      font-size: 24px;
+    }
     .content .content-main .post-list h2 {
       font-weight: bold !important; }
     .content .content-main .post-list li {
