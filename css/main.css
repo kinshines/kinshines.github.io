@@ -399,6 +399,7 @@ div.go-top div.stick {
     overflow: hidden;
     padding: 7px 14px;
     font-size: 14px;
+    font-weight: bold;
     margin: 0; }
   .home-category .post-list {
     padding: 0 14px; }
