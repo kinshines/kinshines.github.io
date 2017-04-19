@@ -1,18 +1,18 @@
 # Site settings
-title: 朝花夕拾
+title: W
 url: "https://kinshines.github.io"
 baseurl: ""
 #timezone: Asia/Shanghai
-description: 超宇的个人博客网站，前端HTML、HTML5、CSS、CSS3、JavaScript、JQuery，后端asp.net等编程经验总结分享。
+description: 王超宇的个人博客网站，前端HTML、HTML5、CSS、CSS3、JavaScript、JQuery，后端asp.net等编程经验总结分享。
 # Your information
 email: chaoyuweb@gmail.com
-author: 超宇
-place: 青岛
-domain: 互联网
-company: haimawan.com
+author: kinshines
+place: Qingdao
+domain: Internet
+company: Haimawan.com
 position: .net developer
-school: 青岛大学
-major: 电子信息工程
+school: Qingdao University
+major: Electrical & Information Engineering
 resume: "https://kinshines.github.io/cv"
 profile: 无善无恶心之体</br>有善有恶意之动</br>知善知恶是良知</br>为善去恶是格物
 twitter_username: chaoyuweb
