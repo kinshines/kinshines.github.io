@@ -27,7 +27,7 @@ protected internal virtual FileStreamResult File(Stream fileStream, string conte
 
 ### FilePathResult
 FilePathResult 直接将磁盘上的文件发送至浏览器：
-1. 最简单的方式
+#### 1. 最简单的方式
 {% highlight java %}
 public ActionResult FilePathDownload1()
 {
@@ -35,3 +35,24 @@ public ActionResult FilePathDownload1()
     return File(path, "application/x-zip-compressed");
 }
 {% endhighlight %}
+
+第一个参数指定文件路径，第二个参数指定文件的 MIME 类型。
+用户点击浏览器上的下载链接后，会调出下载窗口：
+![FilePathDownload1](https://kinshines.github.io/img/mvc-fileresult/FilePathDownload1_2.png)
+大家应该注意到，文件名称会变成 Download1.zip，默认成了 Action 的名字。我们使用 File 方法的第二个重载来解决文件名的问题：
+#### 2. 指定 fileDownloadName
+{% highlight java %}
+public ActionResult FilePathDownload2()
+{
+    var path = Server.MapPath("~/Files/鹤冲天.zip"); 
+    return File("g:\\鹤冲天.zip", "application/x-zip-compressed", "crane.zip");
+}
+
+public ActionResult FilePathDownload3()
+{
+    var path = Server.MapPath("~/Files/鹤冲天.zip"); 
+    var name = Path.GetFileName(path);
+    return File(path, "application/x-zip-compressed", name);
+}
+{% endhighlight %}
+
