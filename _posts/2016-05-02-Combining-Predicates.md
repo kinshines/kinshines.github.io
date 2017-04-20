@@ -3,7 +3,7 @@ layout: post
 title: 在LINQ to Entities 中构建谓词表达式 Predicates
 author: kinshines
 date:   2016-05-02
-categories: c#
+categories: ef
 permalink: /archivers/Linq-to-Entities-Combining-Predicates
 ---
 

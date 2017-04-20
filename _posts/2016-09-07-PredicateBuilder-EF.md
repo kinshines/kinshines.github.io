@@ -3,7 +3,7 @@ layout: post
 title: PredicateBuilder 对 Entity Framework 支持的改进
 author: kinshines
 date:   2016-09-07
-categories: c#
+categories: ef
 permalink: /archivers/PredicateBuilder-EF
 ---
 
