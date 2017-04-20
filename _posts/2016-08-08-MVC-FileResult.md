@@ -84,3 +84,33 @@ public ActionResult FileContentDownload1()
 {% endhighlight %}
 点击后下载链接后，弹出提示窗口如下：
 ![FileContentDownload1](https://kinshines.github.io/img/mvc-fileresult/FileContentDownload1_2.png)
+## FileStreamResult
+想给 FileStreamResult 找一个恰当的例子是不太容易的，毕竟 Http Response 中已经包含了一个输出流，如果要动态生成文件的话，可以直接向这个输出流中写入数据，效率还高。当然，我们不会在 Controller 中直接向 Response 的 OutputStream 写入数据，这样做是不符合MVC的，我们应该把这个操作封装成一个 ActionResult。
+不过仔细想想，用途还是有的，比如服务器上有个压缩（或加密）文件，需要解压（或解密）后发送给用户。
+### 1. 解压（或解密）
+演示代码如下，解压使用 ICSharpCode.SharpZipLib.dll：
+{% hightlight java %}
+public ActionResult FileStreamDownload1()
+{
+    var path = Server.MapPath("~/Files/鹤冲天.zip");
+    var fileStream = new FileStream(path, FileMode.Open);
+    var zipInputStream = new ZipInputStream(fileStream);
+    var entry = zipInputStream.GetNextEntry();
+    return File(zipInputStream, "application/pdf", Url.Encode(entry.Name));
+}
+{% endhighlight %}
+简单起见，假定压缩文件中只有一个文件，且是 pdf 格式的。鹤冲天.zip 如下：
+![FileStreamDownload1](https://kinshines.github.io/img/mvc-fileresult/FileStreamDownload1_2.png)
+点击后弹出下载提示窗口如下：
+![FileStreamDownload1-2](https://kinshines.github.io/img/mvc-fileresult/FileStreamDownload1-2_2.png)
+### 2. 转发（或盗链）
+FileStreamResult 的另一种用途是将其它网站上的文件作为本站文件下载（其实就是盗链）：
+{% highlight java %}
+public ActionResult FileStreamDownload2()
+{
+    var stream = new WebClient().OpenRead("http://files.cnblogs.com/ldp615/Mvc_TextBoxFor.rar");
+    return File(stream, "application/x-zip-compressed", "Mvc_TextBoxFor.rar");
+}
+{% endhighlight %}
+看下面提示窗口，来源还是 localhost:
+![FileStreamDownload2](https://kinshines.github.io/img/mvc-fileresult/FileStreamDownload2_2.png)
