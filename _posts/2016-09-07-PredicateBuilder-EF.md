@@ -35,7 +35,6 @@ Expression<Func<Person, bool>> x = y => y.ID == 3 && y.Name == "张三";
 
 原始 PredicateBuilder 用的是 Invoke 表达式，也就是说没有解析待拼接的表达式。我们可以解析一下，看看能否达到效果。
 
-
 首先来看相同点：
 
 表达式 a ：根是一个相等判断的二元表达式，其左子树是属性的调用的表达式，右子树是一个数字常量表达式。
@@ -46,11 +45,9 @@ Expression<Func<Person, bool>> x = y => y.ID == 3 && y.Name == "张三";
 
 表达式 a 参数名字是 p ，表达式 b 参数名字是 c —— 两者参数的名称不同，但是类型是相同的。
 
- 
-
 对于目标表达式，这里我第一印象是把右边表达式的参数，改成左边的，然后把左右两边表达式的 Body 拼接，加上左边的参数，这就是目标表达式树。经过分析，这种做法是可行的，下面上代码，代码不解释：
 {% highlight java %}
-/// <summary>
+    /// <summary>
     /// 谓词表达式构建器
     /// </summary>
     public static class PredicateBuilder
