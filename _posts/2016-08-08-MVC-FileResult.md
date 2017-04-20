@@ -89,7 +89,7 @@ public ActionResult FileContentDownload1()
 不过仔细想想，用途还是有的，比如服务器上有个压缩（或加密）文件，需要解压（或解密）后发送给用户。
 ### 1. 解压（或解密）
 演示代码如下，解压使用 ICSharpCode.SharpZipLib.dll：
-{% hightlight java %}
+{% highlight java %}
 public ActionResult FileStreamDownload1()
 {
     var path = Server.MapPath("~/Files/鹤冲天.zip");
