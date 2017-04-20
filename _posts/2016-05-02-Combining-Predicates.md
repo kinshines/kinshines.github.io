@@ -19,6 +19,7 @@ public class Car
 
 ### 1.链式操作符 Chaining query operators
 条件一：车是红色
+
 条件二：车的价钱小于10.0
 想要同时满足以上两个条件，可以使用Where方法链式操作：
 {% highlight java %}
