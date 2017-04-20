@@ -3,7 +3,7 @@ layout: post
 title: Whats Jekyll?
 author: kinshines
 date:   2016-04-23
-categories: Demo
+categories: demo
 permalink: /archivers/Whats-Jekyll
 ---
 

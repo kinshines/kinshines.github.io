@@ -3,7 +3,7 @@ layout: post
 title: MVC 通过 FileResult 向浏览器发送文件
 author: kinshines
 date:   2016-08-08
-categories: MVC
+categories: mvc
 permalink: /archivers/MVC-FileResult
 ---
 

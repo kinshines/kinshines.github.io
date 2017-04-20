@@ -3,7 +3,7 @@ layout: post
 title: Example content
 author: kinshines
 date:   2016-04-22
-categories: Demo
+categories: demo
 permalink: /archivers/Example-content
 ---
 

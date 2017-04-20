@@ -3,7 +3,7 @@ layout: post
 title: Newtonsoft.Json 时区差解决方法
 author: kinshines
 date:   2017-03-28
-categories: C#
+categories: c#
 permalink: /archivers/Newtonsoft-Json-DateTimeZone
 ---
 
