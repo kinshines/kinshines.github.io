@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NLog使用总结
+title: NLog 使用总结
 author: kinshines
 date:   2017-02-04
 categories: c#

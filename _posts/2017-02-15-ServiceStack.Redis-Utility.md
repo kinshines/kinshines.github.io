@@ -1,10 +1,10 @@
 ---
 layout: post
-title: ServiceStack.Redis使用总结
+title: ServiceStack.Redis 使用总结
 author: kinshines
 date:   2017-02-15
 categories: c#
-permalink: /archivers/ServiceStack.Redis-Utility
+permalink: /archivers/ServiceStack-Redis-Utility
 ---
 
 <p class="lead">本文是对ServiceStack.Redis的使用总结.</p>
