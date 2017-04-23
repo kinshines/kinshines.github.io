@@ -7,10 +7,14 @@ categories: c#
 permalink: /archivers/nlog-utility
 ---
 
-<p class="lead">本文将介绍NLog的使用总结</p>
+<p class="lead">本文是我对NLog的使用心得</p>
 
 [NLog](http://nlog-project.org/)是.NET平台下一款优秀的日志工具，它提供友好完善的日志方法，丰富的输出配置，下面是我个人对NLog使用总结。
-完整代码参见[NLogUtility](https://github.com/kinshines/NLogUtility/tree/master/NLogUtility)
+
+完整代码参见[Github-NLogUtility](https://github.com/kinshines/NLogUtility/tree/master/NLogUtility)
+
+Nuget源[Nuget-NLogUtility](https://www.nuget.org/packages/NLogUtility)
+
 ### 日志记录部分
 {% highlight java %}
 using System;
@@ -106,7 +110,7 @@ namespace NLogUtility
     <target xsi:type="Mail" name="alert" layout="${date}${newline}${message:exceptionSeparator=|:withException=true}${newline}"
             replaceNewlineWithBrTagInHtml="true" subject="Message from ${ApplicationName} on ${machinename}"
             smtpServer="smtp.exmail.qq.com" smtpAuthentication="Basic"
-            to="receiver@xxx.com" from="sender@xxx.com" smtpUserName="sender@xxx.me" smtpPassword="senderPassword" />
+            to="receiver@xxx.com" from="sender@xxx.com" smtpUserName="sender@xxx.com" smtpPassword="senderPassword" />
     <!--
     Write events to a file with the date in the filename.
     <target xsi:type="File" name="f" fileName="${basedir}/logs/${shortdate}.log"
@@ -128,3 +132,10 @@ namespace NLogUtility
   </rules>
 </nlog>
 {% endhighlight %}
+
+### 简单说明
+1. 日志统一记录在D:\itemlog\NLogUtility下，建议将变量ApplicationName由NLogUtility改成你的应用程序的名字，D:\itemlog也可以更改成你想要的目录
+2. 之所以将日志统一记录到D:\itemlog\目录下，主要是为了日后方便通过ftp工具查看线上服务器的日志，但有人习惯将日志记录到应用程序所在的目录下，那样可以将D:\itemlog\${ApplicationName}修为{basedir}
+3. 默认不记录Trace级别的日志到文件（但会在Console输出），除非修改logger中的minlevel为Trace
+4. 如果要实现将日志发送到邮箱的功能，需要配置有效的smtpServer，to， from，smtpUserName，smtpPassword
+
