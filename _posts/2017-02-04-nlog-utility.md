@@ -1,15 +1,15 @@
 ---
 layout: post
-title: NLog使用帮助
+title: NLog使用总结
 author: kinshines
 date:   2017-02-04
 categories: c#
 permalink: /archivers/nlog-utility
 ---
 
-<p class="lead">本文是我对NLog的使用心得</p>
+<p class="lead">本文是对NLog的使用总结</p>
 
-[NLog](http://nlog-project.org/)是.NET平台下一款优秀的日志工具，它提供友好完善的日志方法，丰富的输出配置，下面是我个人对NLog使用总结。
+[NLog](http://nlog-project.org/)是.NET平台下一款优秀的日志工具，它提供友好完善的日志方法，丰富的输出配置，下面是个人对NLog使用简单总结。
 
 完整代码参见[Github-NLogUtility](https://github.com/kinshines/NLogUtility/tree/master/NLogUtility)
 
