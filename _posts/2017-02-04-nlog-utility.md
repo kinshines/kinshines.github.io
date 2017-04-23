@@ -13,7 +13,7 @@ permalink: /archivers/nlog-utility
 
 完整代码参见[Github-NLogUtility](https://github.com/kinshines/NLogUtility/tree/master/NLogUtility)
 
-Nuget源[Nuget-NLogUtility](https://www.nuget.org/packages/NLogUtility)
+NuGet Packages[Nuget-NLogUtility](https://www.nuget.org/packages/NLogUtility)
 
 ### 日志记录部分
 {% highlight java %}
