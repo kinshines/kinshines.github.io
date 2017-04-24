@@ -7,7 +7,7 @@ categories: c#
 permalink: /archivers/xinge-push-sdk
 ---
 
-<p class="lead"> <a href="http://xg.qq.com/xg">信鸽推送</a> 现改名为腾讯移动推送，是一款强大且免费的移动端推送工具，包括Android设备和iOS设备，官方提供的服务器端SDK有Java,php,python，本文将基于Rest API 实现.NET版SDK</p>
+<p class="lead"> <a href="http://xg.qq.com/xg">信鸽推送</a>现改名为腾讯移动推送，是一款强大且免费的移动端推送工具，包括Android设备和iOS设备，官方提供的服务器端SDK有Java,php,python，本文将基于Rest API 实现.NET版SDK</p>
 
 参考腾讯官方文档及资源：  
 
