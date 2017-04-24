@@ -3,7 +3,7 @@ layout: post
 title: javascript中判断json的方法总结
 author: kinshines
 date:   2017-04-25
-categories: demo
+categories: js
 permalink: /archivers/js-json-summary
 ---
 
