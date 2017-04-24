@@ -21,7 +21,7 @@ github_username:  kinshines
 
 # Comment Service (Disqus or 多说)
 #  choose one and un-comment the line to active it
-duoshuo_shortname: kinshines 
+#  duoshuo_shortname: kinshines 
 # get one: http://duoshuo.com/create-site/
 
 permalink: /archivers/:title
