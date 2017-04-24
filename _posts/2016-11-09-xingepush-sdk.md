@@ -19,27 +19,24 @@ permalink: /archivers/xinge-push-sdk
 
 完整代码参见：
 
-[Github-XinGePush](https://github.com/kinshines/XinGePush)
+[GitHub-XinGePush](https://github.com/kinshines/XinGePush)
 
 快捷方式说明：
-1. Android平台推送消息给单个设备
-
+1. Android平台推送消息给单个设备：
 XingeApp.PushTokenAndroid(000, "myKey", "标题", "大家好!", "3dc4gcd98sdc");
-2. Android平台推送消息给单个帐号
-
+2. Android平台推送消息给单个帐号：
 XingeApp.PushAccountAndroid(000, "myKey", "标题", "大家好!", "nickName");
-
-3. Android平台推送消息给所有设备
+3. Android平台推送消息给所有设备：
 XingeApp.PushAllAndroid(000, "myKey", "标题", "大家好!");
-4. Android平台推送消息给标签选中设备
+4. Android平台推送消息给标签选中设备：
 XingeApp.PushTagAndroid(000, "myKey", "标题", "大家好!", "beijing");
-5. iOS平台推送消息给单个设备
+5. iOS平台推送消息给单个设备：
 XingeApp.PushTokenIos(000, "myKey", "你好!", "3dc4gcd98sdc", XingeApp.IOSENV_PROD);
-6. iOS平台推送消息给单个帐号
+6. iOS平台推送消息给单个帐号：
 XingeApp.PushAccountIos(000, "myKey", "你好", "nickName", XingeApp.IOSENV_PROD);
-7. iOS平台推送消息给所有设备
+7. iOS平台推送消息给所有设备：
 XingeApp.PushAllIos(000, "myKey", "大家好!", XingeApp.IOSENV_PROD);
-8. iOS平台推送消息给标签选中设备
+8. iOS平台推送消息给标签选中设备：
 XingeApp.PushTagIos(000, "myKey", "大家好!", "beijing", XingeApp.IOSENV_PROD);
 
 

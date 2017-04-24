@@ -1,5 +1,5 @@
 ﻿@charset "UTF-8";
-html, body, header, main, footer, h1, p, nav, div, ul, li, a, img, span {
+html, body, header, main, footer, p, nav, div, ul, li, img, span {
   margin: 0;
   padding: 0;
   font-size: 16px;
