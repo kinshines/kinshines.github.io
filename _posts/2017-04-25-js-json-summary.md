@@ -21,9 +21,9 @@ jQuery.isEmptyObject()
 
 ### 3.判断对象是否为空：
 {% highlight js %}
-3.1 if(typeof(x)   ==   "undefined")
+3.1 if(typeof(x)=="undefined")
 
-3.2 if(typeof(x)   !=   "object")
+3.2 if(typeof(x)!="object")
 
 3.3 if(!x)
 {% endhighlight %}
