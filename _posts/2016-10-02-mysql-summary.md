@@ -13,7 +13,7 @@ permalink: /archivers/mysql-summary
 [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
 推荐下载免安装的ZIP Archive，解压到自定义的目录下，修改my-default.ini文件：
 * basedir = D:\Program Files\mysql-5.6.36-winx64
-* datadir = D:\Program Files\mysql-5.7.18-winx64\data
+* datadir = D:\Program Files\mysql-5.6.36-winx64\data
 * port = 3306
 * character_set_server=utf8mb4
 
@@ -40,7 +40,7 @@ permalink: /archivers/mysql-summary
 ### 修改root账号的密码
 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：123456
 
-c:>mysql –uroot
+    c:\>mysql –uroot
 
     mysql>show databases;
 
@@ -52,19 +52,20 @@ c:>mysql –uroot
 
     mysql>QUIT
 
-    此时回到command窗口
+此时回到command窗口
 
-    输入命令：mysql -uroot -p 输入密码后再次进入mysq命令窗口
+ 输入命令：mysql -uroot -p 输入密码后再次进入mysql命令窗口
 
-    如果MySQL连接端口不是3306，甚至连接服务器不是本机，可以使用下面的命令：
+如果MySQL连接端口不是3306，甚至连接服务器不是本机，可以使用下面的命令：
 
-    mysql -h机器名或IP地址 -P端口号 -u root -p
+mysql -h机器名或IP地址 -P端口号 -u root -p
 
 ### 开启MySQL远程连接
-1. 确定服务器上的防火墙没有阻止 3306 端口
-2. 允许远程连接 MySQL 用户并授权
+ 确定服务器上的防火墙没有阻止 3306 端口
 
-mysql>grant all PRIVILEGES on discuz.* to ted@'123.123.123.123' identified by '123456';
+ 允许远程连接 MySQL 用户并授权
+
+    mysql>grant all PRIVILEGES on discuz.* to ted@'123.123.123.123' identified by '123456';
 
 上面的语句表示将 discuz 数据库的所有权限授权给 ted 这个用户，允许 ted 用户在 123.123.123.123 这个 IP 进行远程登陆，并设置 ted 用户的密码为 123456 。
 
@@ -82,33 +83,33 @@ ted 表示你要给哪个用户授权，这个用户可以是存在的用户，�
 
 执行了上面的语句后，再执行下面的语句，方可立即生效。
 
-mysql>flush privileges;
+    mysql>flush privileges;
 
 同理，想让myuser使用mypassword从任何主机连接到mysql服务器的话：
 
-mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword';
+    mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword';
 
-mysql>flush privileges;
+    mysql>flush privileges;
 
 如果想允许用户myuser从ip为192.168.1.3的主机连接到mysql服务器，并使用mypassword作为密码:
 
-mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.3' IDENTIFIED BY 'mypassword’;
+    mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.3' IDENTIFIED BY 'mypassword’;
 
-mysql>flush privileges;
+    mysql>flush privileges;
 
-3. 还有一种不常用的改表法，这里也一并介绍一下：
+还有一种不常用的改表法，这里也一并介绍一下：
 
-c:\>mysql -u root -pvmware
+    c:\>mysql -u root -pvmware
 
-mysql> use mysql;
+    mysql> use mysql;
 
-mysql> update user set host = ‘%’ where user = ‘root’;
+    mysql> update user set host = ‘%’ where user = ‘root’;
 
-mysql> select host, user from user;
+    mysql> select host, user from user;
 
-mysql> flush privileges;
+    mysql> flush privileges;
 
-#### MySQL的备份与还原
+### MySQL的备份与还原
 MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
 1. 备份
     在cmd窗口，使用命令“mysqldump  -u 用户名 -p databasename >exportfilename”导出数据库到文件，例如mysqldump -u root -p voice>voice.sql，然后输入密码即可开始导出
