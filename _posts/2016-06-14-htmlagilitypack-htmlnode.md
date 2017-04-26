@@ -19,7 +19,7 @@ public static readonly string HtmlNodeTypeNameText;　　　　  //获取一个�
 
 ### 二、属性
 {% highlight java %}
-Attributes 　　　　　　　　　　　　获取节点的属性集合 
+Attributes      //获取节点的属性集合 
 ChildNodes　　　　　　　　　　　　获取子节点集合(包括文本节点) 
 Closed　　　　　　　　　　　　　　该节点是否已关闭(</xxx>) 
 ClosingAttributes　　　　　　　　  在关闭标签的属性集合 
