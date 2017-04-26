@@ -29,12 +29,13 @@ permalink: /archivers/mysql-summary
  2. 选择系统变量中的Path
 
      点击编辑按钮，在原变量值末尾增加  ;%MYSQL_HOME%\bin
-     
+
      注意是在原有变量值后面加上这个变量，用;隔开，不能删除原来的变量值
 
 ### 注册windows服务并启动
 1. 从控制台进入到MySQL解压目录下的 bin 目录下
 2. 输入服务安装命令：
+
         mysqld install MySQL --defaults-file="D:\Program Files\MySQL\mysql-5.6.36-winx64\my-default.ini"
 
     安装成功后会提示服务安装成功
