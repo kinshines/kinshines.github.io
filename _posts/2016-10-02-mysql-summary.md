@@ -19,12 +19,17 @@ permalink: /archivers/mysql-summary
 
 ### 添加环境变量
 1. 右键单击我的电脑->属性->高级系统设置(高级)->环境变量
+
     点击系统变量下的新建按钮
+
     输入变量名：MYSQL_HOME
+
     输入变量值：D:\Program Files\mysql-5.6.36-winx64
+
  2. 选择系统变量中的Path
-     点击编辑按钮
-     在原变量值末尾增加  ;%MYSQL_HOME%\bin
+
+     点击编辑按钮，在原变量值末尾增加  ;%MYSQL_HOME%\bin
+     
      注意是在原有变量值后面加上这个变量，用;隔开，不能删除原来的变量值
 
 ### 注册windows服务并启动
