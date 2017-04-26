@@ -131,26 +131,25 @@ ted 表示你要给哪个用户授权，这个用户可以是存在的用户，�
 ### MySQL的备份与还原
 MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
 1. 备份
-    在cmd窗口，使用命令:
+
+    在cmd窗口，使用命令
     
         c:\>mysqldump  -u 用户名 -p databasename >exportfilename
         
-        导出数据库到文件，例如：
+    导出数据库到文件，例如：
     
         c:\>mysqldump -u root -p voice>voice.sql
         
     然后输入密码即可开始导出
 2. 还原
-    输入命令：
+
+    输入命令
     
         c:\>mysql -uroot -p 
         
-    输入密码后再次进入mysq命令窗口
-    输入命令
+    输入密码后再次进入mysq命令窗口后输入以下命令查看当前有哪些数据库
     
         mysql>show databases；
-        
-    查看当前有哪些数据库
 
     建立新数据库，输入
     
@@ -161,8 +160,10 @@ MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
         mysql>use voice；
 
     导入数据，输入
+
         mysql>source voice.sql；
     开始导入，再次出现
+    
         mysql>
     并且没有提示错误即还原成功
 
