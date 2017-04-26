@@ -117,14 +117,10 @@ permalink: /archivers/mysql-summary
 
 3. 还有一种不常用的改表法，这里也一并介绍一下：
 
-        c:\>mysql -u root -pvmware
-
+        c:\>mysql -u root -p
         mysql> use mysql;
-
         mysql> update user set host = ‘%’ where user = ‘root’;
-
         mysql> select host, user from user;
-
         mysql> flush privileges;
 
 ### MySQL的备份与还原
@@ -148,19 +144,19 @@ MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
         
     输入密码后再次进入mysq命令窗口，再输入以下命令查看当前有哪些数据库
     
-        mysql>show databases；
+        mysql>show databases;
 
     建立新数据库，输入
     
-        mysql>create database voice；
+        mysql>create database voice;
 
     切换到刚建立的数据库，输入
     
-        mysql>use voice；
+        mysql>use voice;
 
     导入数据，输入
 
-        mysql>source voice.sql；
+        mysql>source voice.sql;
 
     开始导入，再次出现
 
