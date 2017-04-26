@@ -57,15 +57,10 @@ permalink: /archivers/mysql-summary
 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：123456
 
     c:\>mysql –uroot
-
     mysql>show databases;
-
     mysql>use mysql;
-
     mysql>UPDATE user SET password=PASSWORD("123456") WHERE user='root';
-
     mysql>FLUSH PRIVILEGES;
-
     mysql>QUIT
 
 此时回到command窗口
@@ -106,13 +101,11 @@ permalink: /archivers/mysql-summary
     同理，想让myuser使用mypassword从任何主机连接到mysql服务器的话：
 
         mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword';
-
         mysql>flush privileges;
 
     如果想允许用户myuser从ip为192.168.1.3的主机连接到mysql服务器，并使用mypassword作为密码:
 
         mysql>GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'192.168.1.3' IDENTIFIED BY 'mypassword’;
-
         mysql>flush privileges;
 
 3. 还有一种不常用的改表法，这里也一并介绍一下：
