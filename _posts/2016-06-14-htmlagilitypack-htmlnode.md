@@ -20,29 +20,29 @@ public static readonly string HtmlNodeTypeNameText;　　　　  //获取一个�
 ### 二、属性
 {% highlight java %}
 Attributes      //获取节点的属性集合 
-ChildNodes　　　　　　　　　　　　获取子节点集合(包括文本节点) 
-Closed　　　　　　　　　　　　　　该节点是否已关闭(</xxx>) 
-ClosingAttributes　　　　　　　　  在关闭标签的属性集合 
-FirstChild　　　　　　　　　　　　  获取第一个子节点 
-HasAttributes　　　　　　　　　　  判断该节点是否含有属性 
-HasChildNodes　　　　　　　　　　判断该节点是否含有子节点 
-HasClosingAttributes　　　　　　  判断该节点的关闭标签是否含有属性(</xxx class="xxx">) 
-Id　　　　　　　　　　　　　　　　 获取该节点的Id属性 
-InnerHtml　　　　　　　　　　　　 获取该节点的Html代码 
-InnerText　　　　　　　　　　　　 获取该节点的内容，与InnerHtml不同的地方在于它会过滤掉Html代码，而InnerHtml是连Html代码一起输出 
-LastChild　　　　　　　　　　　　  获取最后一个子节点 
-Line　　　　　　　　　　　　　　　 获取该节点的开始标签或开始代码位于整个HTML源代码的第几行(行号) 
-LinePosition　　　　　　　　　　　 获取该节点位于第几列 
-Name　　　　　　　　　　　　　　  Html元素名 
-NextSibling　　　　　　　　　　　　获取下一个兄弟节点 
-NodeType　　　　　　　　　　　　  获取该节点的节点类型 
-OriginalName　　　　　　　　　　　获取原始的未经更改的元素名 
-OuterHtml　　　　　　　　　　　　 整个节点的代码 
-OwnerDocument　　　　　　　　　节点所在的HtmlDocument文档 
-ParentNode　　　　　　　　　　　　获取该节点的父节点 
-PreviousSibling　　　　　　　　　　获取前一个兄弟节点 
-StreamPosition　　　　　　　　　　该节点位于整个Html文档的字符位置 
-XPath　　　　　　　　　　　　　　  根据节点返回该节点的XPath
+ChildNodes      //获取子节点集合(包括文本节点) 
+Closed      //该节点是否已关闭(</xxx>) 
+ClosingAttributes       //在关闭标签的属性集合 
+FirstChild      //获取第一个子节点 
+HasAttributes       //判断该节点是否含有属性 
+HasChildNodes       //判断该节点是否含有子节点 
+HasClosingAttributes        //判断该节点的关闭标签是否含有属性(</xxx class="xxx">) 
+Id      //获取该节点的Id属性 
+InnerHtml       //获取该节点的Html代码 
+InnerText       //获取该节点的内容，与InnerHtml不同的地方在于它会过滤掉Html代码，而InnerHtml是连Html代码一起输出 
+LastChild       //获取最后一个子节点 
+Line        //获取该节点的开始标签或开始代码位于整个HTML源代码的第几行(行号) 
+LinePosition        //获取该节点位于第几列 
+Name        //Html元素名 
+NextSibling     //获取下一个兄弟节点 
+NodeType        //获取该节点的节点类型 
+OriginalName        //获取原始的未经更改的元素名 
+OuterHtml       //整个节点的代码 
+OwnerDocument       //节点所在的HtmlDocument文档 
+ParentNode      //获取该节点的父节点 
+PreviousSibling     //获取前一个兄弟节点 
+StreamPosition      //该节点位于整个Html文档的字符位置 
+XPath       //根据节点返回该节点的XPath
 {% endhighlight %}
 
 代码示例：
@@ -135,56 +135,56 @@ static void Main(string[] args)
 
 ### 三、方法
 {% highlight java %}
-IEnumerable<HtmlNode> Ancestors(); 　　　　　　　　　　　　　　返回此元素的所有上级节点的集合。 
-IEnumerable<HtmlNode> Ancestors(string name); 　　　　 　　　  返回此元素参数名字匹配的所有上级节点的集合。 
-IEnumerable<HtmlNode> AncestorsAndSelf(); 　　　　　　 　　　　返回此元素的所有上级节点和自身的集合。 
-IEnumerable<HtmlNode> AncestorsAndSelf(string name); 　　　　 返回此元素的名字匹配的所有上级节点和自身的集合。 
-HtmlNode AppendChild(HtmlNode newChild); 　　　　　　 　　　　  将参数元素追加到为调用元素的子元素(追加在最后) 
-void AppendChildren(HtmlNodeCollection newChildren);　　　　　　 将参数集合中的元素追加为调用元素的子元素(追加在最后) 
-HtmlNode PrependChild(HtmlNode newChild); 　　　　　　　　　　   将参数中的元素作为子元素，放在调用元素的最前面 
-void PrependChildren(HtmlNodeCollection newChildren); 　　　　　　将参数集合中的所有元素作为子元素，放在调用元素前面 
-static bool CanOverlapElement(string name); 　　　　　　　　　　　 确定是否可以保存重复的元素 
-IEnumerable<HtmlAttribute> ChildAttributes(string name); 　　　　获取所有子元素的属性(参数名要与元素名匹配) 
-HtmlNode Clone(); 　　　　　　　　　　　　　　　　　　　　　　　　 本节点克隆到一个新的节点 
-HtmlNode CloneNode(bool deep); 　　　　　　　　　　　　　　　　　节点克隆到一个新的几点，参数确定是否连子元素一起克隆 
-HtmlNode CloneNode(string newName); 　　　　　　　　　　　　　　克隆的同时更改元素名 HtmlNode 
-CloneNode(string newName, bool deep);　　　　　　　　  克隆的同时更改元素名。参数确定是否连子元素一起克隆 
-void CopyFrom(HtmlNode node); 　　　　　　　　　　　　　　　　　 创建重复的节点和其下的子树。 
-void CopyFrom(HtmlNode node, bool deep); 　　　　　　　　　　　 创建节点的副本。 
-XPathNavigator CreateNavigator(); 　　　　　　　　　　　　　　　　 返回的一个对于此文档的XPathNavigator          
-static HtmlNode CreateNode(string html); 　　　　　　　　　　　　  静态方法，允许用字符串创建一个新节点 
-XPathNavigator CreateRootNavigator(); 　　　　　　　　　　　　　　创建一个根路径的XPathNavigator  
-IEnumerable<HtmlNode> DescendantNodes(); 　　　　　　　　　　 获取所有子代节点 
-IEnumerable<HtmlNode> DescendantNodesAndSelf(); 　　　　　　 获取所有的子代节点以及自身 
-IEnumerable<HtmlNode> Descendants(); 　　　　　　　　　　　　　获取枚举列表中的所有子代节点 
-IEnumerable<HtmlNode> Descendants(string name); 　　　　　　　获取枚举列表中的所有子代节点，注意元素名要与参数匹配 
-IEnumerable<HtmlNode> DescendantsAndSelf(); 　　　　　　　　　获取枚举列表中的所有子代节点以及自身 
-IEnumerable<HtmlNode> DescendantsAndSelf(string name);　　　 获取枚举列表中的所有子代节点以及自身，注意元素名要与参数匹配 
-HtmlNode Element(string name); 　　　　　　　　　　　　　　　　　 根据参数名获取一个元素 
-IEnumerable<HtmlNode> Elements(string name); 　　　　　　　　　根据参数名获取匹配的元素集合 
-bool GetAttributeValue(string name, bool def); 　　　　　　　　　　 帮助方法，用来获取此节点的属性的值(布尔类型)。如果未找到该属性，则将返回默认值。 
-int GetAttributeValue(string name, int def); 　　　　　　　　　　　　 帮助方法，用来获取此节点的属性的值(整型)。如果未找到该属性，则将返回默认值。 
-string GetAttributeValue(string name, string def); 　　　　　　　　　帮助方法，用来获取此节点的属性的值(字符串类型)。如果未找到该属性，则将返回默认值。 
-HtmlNode InsertAfter(HtmlNode newChild, HtmlNode refChild); 　　  将一个节点插入到第二个参数节点的后面，与第二个参数是兄弟关系 
-HtmlNode InsertBefore(HtmlNode newChild, HtmlNode refChild); 　　讲一个节点插入到第二个参数节点的后面，与第二个参数是兄弟关系 
-static bool IsCDataElement(string name); 　　　　　　　　　　　　　 确定是否一个元素节点是一个 CDATA 元素节点。 
-static bool IsClosedElement(string name); 　　　　　　　　　　　　　确定是否封闭的元素节点 
-static bool IsEmptyElement(string name); 　　　　　　　　　　　　   确定是否一个空的元素节点。 
-static bool IsOverlappedClosingElement(string text); 　　　　　　　  确定是否文本对应于一个节点可以保留重叠的结束标记。 
-void Remove(); 　　　　　　　　　　　　　　　　　　　　　　　　　　 从父集合中移除调用节点 
-void RemoveAll(); 　　　　　　　　　　　　　　　　　　　　　　　　　 移除调用节点的所有子节点以及属性 
-void RemoveAllChildren(); 　　　　　　　　　　　　　　　　　　　　　 移除调用节点的所有子节点 
-HtmlNode RemoveChild(HtmlNode oldChild); 　　　　　　　　　　　　 移除调用节点的指定名字的子节点 
-HtmlNode RemoveChild(HtmlNode oldChild, bool keepGrandChildren);移除调用节点调用名字的子节点，第二个参数确定是否连孙子节点一起移除 
-HtmlNode ReplaceChild(HtmlNode newChild, HtmlNode oldChild);　　 将调用节点原有的一个子节点替换为一个新的节点，第二个参数是旧节点 
-HtmlNodeCollection SelectNodes(string xpath);　　　　　　　　　　　根据XPath获取一个节点集合 
-HtmlNode SelectSingleNode(string xpath); 　　　　　　　　　　　　　根据XPath获取唯一的一个节点 
-HtmlAttribute SetAttributeValue(string name, string value); 　　　　 设置调用节点的属性 
-string WriteContentTo(); 　　　　　　　　　　　　　　　　　　　　　  将该节点的所有子级都保存到一个字符串中。 
-void WriteContentTo(TextWriter outText); 　　　　　　　　　　　　　将该节点的所有子级都保存到指定的 TextWriter。 
-string WriteTo(); 　　　　　　　　　　　　　　　　　　　　　　　　　　将当前节点保存到一个字符串中。 
-void WriteTo(TextWriter outText); 　　　　　　　　　　　　　　　　　将当前节点保存到指定的 TextWriter。 
-void WriteTo(XmlWriter writer); 　　　　　　　　　　　　　　　　　　  将当前节点保存到指定的则 XmlWriter。
+IEnumerable<HtmlNode> Ancestors();      //返回此元素的所有上级节点的集合。 
+IEnumerable<HtmlNode> Ancestors(string name);       //返回此元素参数名字匹配的所有上级节点的集合。 
+IEnumerable<HtmlNode> AncestorsAndSelf();       //返回此元素的所有上级节点和自身的集合。 
+IEnumerable<HtmlNode> AncestorsAndSelf(string name);        //返回此元素的名字匹配的所有上级节点和自身的集合。 
+HtmlNode AppendChild(HtmlNode newChild);        //将参数元素追加到为调用元素的子元素(追加在最后) 
+void AppendChildren(HtmlNodeCollection newChildren);        //将参数集合中的元素追加为调用元素的子元素(追加在最后) 
+HtmlNode PrependChild(HtmlNode newChild);       //将参数中的元素作为子元素，放在调用元素的最前面 
+void PrependChildren(HtmlNodeCollection newChildren);       //将参数集合中的所有元素作为子元素，放在调用元素前面 
+static bool CanOverlapElement(string name);     //确定是否可以保存重复的元素 
+IEnumerable<HtmlAttribute> ChildAttributes(string name);        //获取所有子元素的属性(参数名要与元素名匹配) 
+HtmlNode Clone();       //本节点克隆到一个新的节点 
+HtmlNode CloneNode(bool deep);      //节点克隆到一个新的几点，参数确定是否连子元素一起克隆 
+HtmlNode CloneNode(string newName);     //克隆的同时更改元素名 HtmlNode 
+CloneNode(string newName, bool deep);       //克隆的同时更改元素名。参数确定是否连子元素一起克隆 
+void CopyFrom(HtmlNode node);       //创建重复的节点和其下的子树。 
+void CopyFrom(HtmlNode node, bool deep);        //创建节点的副本。 
+XPathNavigator CreateNavigator();       //返回的一个对于此文档的XPathNavigator          
+static HtmlNode CreateNode(string html);        //静态方法，允许用字符串创建一个新节点 
+XPathNavigator CreateRootNavigator();       //创建一个根路径的XPathNavigator  
+IEnumerable<HtmlNode> DescendantNodes();        //获取所有子代节点 
+IEnumerable<HtmlNode> DescendantNodesAndSelf();     //获取所有的子代节点以及自身 
+IEnumerable<HtmlNode> Descendants();        //获取枚举列表中的所有子代节点 
+IEnumerable<HtmlNode> Descendants(string name);     //获取枚举列表中的所有子代节点，注意元素名要与参数匹配 
+IEnumerable<HtmlNode> DescendantsAndSelf();     //获取枚举列表中的所有子代节点以及自身 
+IEnumerable<HtmlNode> DescendantsAndSelf(string name);      //获取枚举列表中的所有子代节点以及自身，注意元素名要与参数匹配 
+HtmlNode Element(string name);      //根据参数名获取一个元素 
+IEnumerable<HtmlNode> Elements(string name);        //根据参数名获取匹配的元素集合 
+bool GetAttributeValue(string name, bool def);      //帮助方法，用来获取此节点的属性的值(布尔类型)。如果未找到该属性，则将返回默认值。 
+int GetAttributeValue(string name, int def);        //帮助方法，用来获取此节点的属性的值(整型)。如果未找到该属性，则将返回默认值。 
+string GetAttributeValue(string name, string def);      //帮助方法，用来获取此节点的属性的值(字符串类型)。如果未找到该属性，则将返回默认值。 
+HtmlNode InsertAfter(HtmlNode newChild, HtmlNode refChild);     //将一个节点插入到第二个参数节点的后面，与第二个参数是兄弟关系 
+HtmlNode InsertBefore(HtmlNode newChild, HtmlNode refChild);        //将一个节点插入到第二个参数节点的后面，与第二个参数是兄弟关系 
+static bool IsCDataElement(string name);        //确定是否一个元素节点是一个 CDATA 元素节点。 
+static bool IsClosedElement(string name);       //确定是否封闭的元素节点 
+static bool IsEmptyElement(string name);        //确定是否一个空的元素节点。 
+static bool IsOverlappedClosingElement(string text);        //确定是否文本对应于一个节点可以保留重叠的结束标记。 
+void Remove();      //从父集合中移除调用节点 
+void RemoveAll();       //移除调用节点的所有子节点以及属性 
+void RemoveAllChildren();       //移除调用节点的所有子节点 
+HtmlNode RemoveChild(HtmlNode oldChild);        //移除调用节点的指定名字的子节点 
+HtmlNode RemoveChild(HtmlNode oldChild, bool keepGrandChildren);        //移除调用节点调用名字的子节点，第二个参数确定是否连孙子节点一起移除 
+HtmlNode ReplaceChild(HtmlNode newChild, HtmlNode oldChild);        //将调用节点原有的一个子节点替换为一个新的节点，第二个参数是旧节点 
+HtmlNodeCollection SelectNodes(string xpath);       //根据XPath获取一个节点集合 
+HtmlNode SelectSingleNode(string xpath);        //根据XPath获取唯一的一个节点 
+HtmlAttribute SetAttributeValue(string name, string value);     //设置调用节点的属性 
+string WriteContentTo();        //将该节点的所有子级都保存到一个字符串中。 
+void WriteContentTo(TextWriter outText);        //将该节点的所有子级都保存到指定的 TextWriter。 
+string WriteTo();       //将当前节点保存到一个字符串中。 
+void WriteTo(TextWriter outText);       //将当前节点保存到指定的 TextWriter。 
+void WriteTo(XmlWriter writer);     //将当前节点保存到指定的则 XmlWriter。
 {% endhighlight %}
 
 示例代码：
