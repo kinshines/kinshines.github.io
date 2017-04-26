@@ -40,12 +40,16 @@ permalink: /archivers/mysql-summary
 
     安装成功后会提示服务安装成功
 
-    移除服务命令为：mysqld remove
-3. 启动服务命令为：net start mysql
+    移除服务命令为：
+    
+        mysqld remove
+3. 启动服务命令为：
 
-    提示MySQL服务已经启动成功
+        net start mysql
 
-    同理，停止服务命令为：net stop mysql
+    同理，停止服务命令为：
+        
+        net stop mysql
 
 ### 修改root账号的密码
 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：123456
@@ -64,11 +68,14 @@ permalink: /archivers/mysql-summary
 
 此时回到command窗口
 
- 输入命令：mysql -uroot -p 输入密码后再次进入mysql命令窗口
+输入命令：
+
+    mysql -uroot -p 
+输入密码后可再次进入mysql命令窗口
 
 如果MySQL连接端口不是3306，甚至连接服务器不是本机，可以使用下面的命令：
 
-mysql -h机器名或IP地址 -P端口号 -u root -p
+    mysql -h机器名或IP地址 -P端口号 -u root -p
 
 ### 开启MySQL远程连接
  确定服务器上的防火墙没有阻止 3306 端口
@@ -122,7 +129,11 @@ ted 表示你要给哪个用户授权，这个用户可以是存在的用户，�
 ### MySQL的备份与还原
 MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
 1. 备份
-    在cmd窗口，使用命令“mysqldump  -u 用户名 -p databasename >exportfilename”导出数据库到文件，例如mysqldump -u root -p voice>voice.sql，然后输入密码即可开始导出
+    在cmd窗口，使用命令“mysqldump  -u 用户名 -p databasename >exportfilename”导出数据库到文件，例如
+    
+        mysqldump -u root -p voice>voice.sql
+        
+    然后输入密码即可开始导出
 2. 还原
     输入命令：mysql -uroot -p 输入密码后再次进入mysq命令窗口
     输入命令"show databases；"查看当前有哪些数据库
