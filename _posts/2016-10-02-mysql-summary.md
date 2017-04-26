@@ -30,12 +30,16 @@ permalink: /archivers/mysql-summary
 ### 注册windows服务并启动
 1. 从控制台进入到MySQL解压目录下的 bin 目录下
 2. 输入服务安装命令：
-    mysqld install MySQL --defaults-file="D:\Program Files\MySQL\mysql-5.6.36-winx64\my-default.ini"
+        mysqld install MySQL --defaults-file="D:\Program Files\MySQL\mysql-5.6.36-winx64\my-default.ini"
+
     安装成功后会提示服务安装成功
+
     移除服务命令为：mysqld remove
 3. 启动服务命令为：net start mysql
+
     提示MySQL服务已经启动成功
-    停止服务命令为：net stop mysql
+
+    同理，停止服务命令为：net stop mysql
 
 ### 修改root账号的密码
 刚安装完成时root账号默认密码为空，此时可以将密码修改为指定的密码。如：123456
