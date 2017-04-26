@@ -115,7 +115,7 @@ permalink: /archivers/mysql-summary
 
         mysql>flush privileges;
 
-    还有一种不常用的改表法，这里也一并介绍一下：
+3. 还有一种不常用的改表法，这里也一并介绍一下：
 
         c:\>mysql -u root -pvmware
 
