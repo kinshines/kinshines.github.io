@@ -28,7 +28,9 @@ permalink: /archivers/mysql-summary
 
  2. 选择系统变量中的Path
 
-     点击编辑按钮，在原变量值末尾增加  ;%MYSQL_HOME%\bin
+     点击编辑按钮，在原变量值末尾增加  
+     
+        ;%MYSQL_HOME%\bin
 
      注意是在原有变量值后面加上这个变量，用;隔开，不能删除原来的变量值
 
@@ -129,17 +131,39 @@ ted 表示你要给哪个用户授权，这个用户可以是存在的用户，�
 ### MySQL的备份与还原
 MySQL备份和还原,都是利用mysqldump、mysql和source命令来完成的
 1. 备份
-    在cmd窗口，使用命令“mysqldump  -u 用户名 -p databasename >exportfilename”导出数据库到文件，例如
+    在cmd窗口，使用命令:
     
-        mysqldump -u root -p voice>voice.sql
+        c:\>mysqldump  -u 用户名 -p databasename >exportfilename
+        
+        导出数据库到文件，例如：
+    
+        c:\>mysqldump -u root -p voice>voice.sql
         
     然后输入密码即可开始导出
 2. 还原
-    输入命令：mysql -uroot -p 输入密码后再次进入mysq命令窗口
-    输入命令"show databases；"查看当前有哪些数据库
-    建立新数据库，输入"create database voice；"
-    切换到刚建立的数据库，输入"use voice；"
-    导入数据，输入"source voice.sql；"
-    开始导入，再次出现"mysql>"并且没有提示错误即还原成功
+    输入命令：
+    
+        c:\>mysql -uroot -p 
+        
+    输入密码后再次进入mysq命令窗口
+    输入命令
+    
+        mysql>show databases；
+        
+    查看当前有哪些数据库
+
+    建立新数据库，输入
+    
+        mysql>create database voice；
+
+    切换到刚建立的数据库，输入
+    
+        mysql>use voice；
+
+    导入数据，输入
+        mysql>source voice.sql；
+    开始导入，再次出现
+        mysql>
+    并且没有提示错误即还原成功
 
 
