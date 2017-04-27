@@ -243,7 +243,7 @@ permalink: /archivers/media-queries-for-standard-devices
 
 ## Tablets
 ### iPads
-{% hightlight css %}
+{% highlight css %}
 /* ----------- iPad mini ----------- */
 
 /* Portrait and Landscape */
