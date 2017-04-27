@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HtmlAgilityPack 之 HtmlNode类
+title: 抓取网页使用HtmlAgilityPack解析内容
 author: kinshines
 date:   2016-06-14
 categories: c#
@@ -11,10 +11,10 @@ permalink: /archivers/HtmlAgilityPack-HtmlNode
 
 ### 一、静态属性
 {% highlight java %}
-public static Dictionary<string, HtmlElementFlag> //ElementsFlags;获取集合的定义为特定的元素节点的特定行为的标志。表包含小写标记名称作为键和作为值的 HtmlElementFlags 组合 DictionaryEntry 列表。
-public static readonly string HtmlNodeTypeNameComment;　　//获取一个注释节点的名称。实际上，它被定义为 '#comment
-public static readonly string HtmlNodeTypeNameDocument;　  //获取文档节点的名称。实际上，它被定义为 '#document'
-public static readonly string HtmlNodeTypeNameText;　　　　  //获取一个文本节点的名称。实际上，它被定义为 '#text'
+public static Dictionary<string, HtmlElementFlag>       //ElementsFlags;获取集合的定义为特定的元素节点的特定行为的标志。表包含小写标记名称作为键和作为值的 HtmlElementFlags 组合 DictionaryEntry 列表。
+public static readonly string HtmlNodeTypeNameComment;      //获取一个注释节点的名称。实际上，它被定义为 '#comment
+public static readonly string HtmlNodeTypeNameDocument;     //获取文档节点的名称。实际上，它被定义为 '#document'
+public static readonly string HtmlNodeTypeNameText;     //获取一个文本节点的名称。实际上，它被定义为 '#text'
 {% endhighlight %}
 
 ### 二、属性
