@@ -128,7 +128,7 @@ class Program
 点击SimpleNugetTest左边的小垃圾桶图标，即可进入Listing页面，页面中我们也能看到“Permanently deleting packages is not supported”的提示。要将Package从Package List中移除，只需要去掉List SimpleNugetTest 2.0.0.0 in search results选项前面的钩钩，然后单击Save按钮保存即可
 
 ### 11.按照约定结构的文件夹制作Nuget包
-上面讲解了使用Visual Studio project来制作简单的Nuget包，但在实际操作时，有一些像readme之类的文件也希望包含到Nuget包中，package中大体可以包含以下三类：
+上面讲解了使用Visual Studio project来制作简单的Nuget包，但在实际操作时，有一些像readme之类的文件也希望包含到Nuget包中，Nuget包中一般可以包含以下三类文件：
 
 * Content and source code that should be injected into the target project
 * PowerShell scripts (packages used in NuGet 2.x can include installation scripts as well, which is not supported in NuGet 3.x and later.)
@@ -170,7 +170,7 @@ class Program
 
 若基于不同版本的Framework需要引用不同版本的dll，可以在lib目录下分别建子目录如net35，net40，net45，之后将所需的dll对应放置
 
-之后在当前布局的父目录，创建.nuspec
+按照以上约定布局目录和内容后，在当前布局的根目录，创建.nuspec
 
         nuget spec
 
