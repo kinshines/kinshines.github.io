@@ -175,5 +175,16 @@ class Program
         nuget spec
 
 
+参考文献：
+
+[使用NuGet发布自己的类库包](http://www.cnblogs.com/daxnet/archive/2013/05/07/3064577.html)
+
+[Creating NuGet packages](https://docs.microsoft.com/zh-cn/nuget/create-packages/creating-a-package)
+
+延伸阅读：
+
+[Nuget Doc](https://docs.microsoft.com/zh-cn/nuget/)
+
+[Create .NET standard packages with Visual Studio 2017](https://docs.microsoft.com/zh-cn/nuget/guides/create-net-standard-packages-vs2017)
 
 
