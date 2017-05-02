@@ -3,7 +3,7 @@ layout: post
 title: 使用Nuget发布自己的package
 author: kinshines
 date:   2016-01-12
-categories: c#
+categories: develop
 permalink: /archivers/nuget-create-package
 ---
 
