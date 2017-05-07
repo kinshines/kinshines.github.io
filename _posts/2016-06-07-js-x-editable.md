@@ -202,12 +202,12 @@ HomeController修改如下：
 {% endhighlight %}
 
 ### 效果
-![Demo](https://kinshines.github.io/img/js-xeditable/x-ediable_1.png)
-![text](https://kinshines.github.io/img/js-xeditable/x-ediable_2.png)
-![text with error](https://kinshines.github.io/img/js-xeditable/x-ediable_3.png)
-![textarea](https://kinshines.github.io/img/js-xeditable/x-ediable_4.png)
-![select](https://kinshines.github.io/img/js-xeditable/x-ediable_5.png)
-![datetime](https://kinshines.github.io/img/js-xeditable/x-ediable_6.png)
+![Demo](https://kinshines.github.io/img/js-xeditable/x-editable_1.png)
+![text](https://kinshines.github.io/img/js-xeditable/x-editable_2.png)
+![text with error](https://kinshines.github.io/img/js-xeditable/x-editable_3.png)
+![textarea](https://kinshines.github.io/img/js-xeditable/x-editable_4.png)
+![select](https://kinshines.github.io/img/js-xeditable/x-editable_5.png)
+![datetime](https://kinshines.github.io/img/js-xeditable/x-editable_6.png)
 
 
 
