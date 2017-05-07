@@ -48,25 +48,25 @@ Elasticsearch依赖Java 8，首先需要安装[jdk 1.8](http://www.oracle.com/te
 
 首先需要修改第17行，集群名称：
 
-cluster.name: my-application
+                cluster.name: my-application
 
 第23行，节点名称：
 
-node.name: node-1
+                node.name: node-1
 
 在部署到生产环境时，往往通过部署多个节点搭建集群，因此集群名称须一致，但各个节点需要分别命名，需要注意的是，如果dev,stage,prod环境是在同一网络里，需要将这三个环境的集群名称分别设置，决不能一样，否则会导致3个环境的数据混淆。
 
 第55行，配置当前机器的内网IP地址：
 
-network.host: 192.168.0.1
+                network.host: 192.168.0.1
 
 第59行，ES服务端口号，默认就是9200，不建议修改
 
-http.port: 9200
+                http.port: 9200
 
 第68行，集群节点列表，host1,host2分别配置为各个节点的IP：
 
-discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+                discovery.zen.ping.unicast.hosts: ["host1", "host2"]
 
 ES对外提供服务使用的是9200端口，ES各节点内部通信使用的是9300端口，部署时需要告知运维开通9200和9300这两个端口
 
@@ -82,24 +82,30 @@ ES对外提供服务使用的是9200端口，ES各节点内部通信使用的是
 
 ### 查看状态
 #### 查看集群健康状态
-在浏览器中输入：http://localhost:9200/_cat/health?v
+在浏览器中输入：
+
+                http://localhost:9200/_cat/health?v
 
 返回：
 
 epoch      timestamp cluster        status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+
 1494167910 22:38:30  my-application green           1         1      0   0    0    0        0             0                  -                100.0%
 
 #### 查看节点状态
 在浏览器输入：
+        
         http://localhost:9200/_cat/nodes?v
 
 返回：
 
 ip        heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
+
 127.0.0.1            7          84   8                          mdi       *      node-1
 
 #### 查看索引数据
 在浏览器输入：
+        
         http://localhost:9200/_cat/indices?v
 
 返回：
@@ -119,7 +125,9 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
         http://localhost:9200/_cat/indices?v
 
 得到如下响应：
+
 health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+
 yellow open   blog TfuBu8gvSFqVTQuFTqtUNg   5   1          0            0       650b           650b
 
 ### 配置IK分词插件
