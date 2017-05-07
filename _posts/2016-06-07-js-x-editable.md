@@ -7,7 +7,7 @@ categories: js
 permalink: /archivers/js-x-editable
 ---
 
-<p class="lead">Web开发中，通常使用表单编辑模式是将所有可编辑的项全部编辑好之后，点击保存按钮后统一保存，但在某些情景中，要求在展现表单某一项时即可切换至编辑模式，编辑完成后通过ajax保存该项，一款 js 插件<a href='https://github.com/vitalets/x-editable'>X-editable</a>应运而生</p>
+<p class="lead">Web开发中，通常使用表单编辑模式是将所有可编辑的项全部编辑好之后，点击保存按钮后统一保存，但在某些情景中，要求在展现表单某一项时即可切换至编辑模式，编辑完成后通过ajax保存该项，一款 js 插件<a href='https://github.com/vitalets/x-editable'>X-editable</a>应运而生，下面是在MVC5 项目中的应用示例，更多用法，参见<a href="http://vitalets.github.io/x-editable/">官方文档</a></p>
 
 ### 下载安装
 使用VS创建一个基本的MVC5项目，Nuget安装x-editable
@@ -202,12 +202,19 @@ HomeController修改如下：
 {% endhighlight %}
 
 ### 效果
+#### Demo
 ![Demo](https://kinshines.github.io/img/js-xeditable/x-editable_1.png)
+#### text
 ![text](https://kinshines.github.io/img/js-xeditable/x-editable_2.png)
+#### text with error
 ![text with error](https://kinshines.github.io/img/js-xeditable/x-editable_3.png)
+#### textarea
 ![textarea](https://kinshines.github.io/img/js-xeditable/x-editable_4.png)
+#### select
 ![select](https://kinshines.github.io/img/js-xeditable/x-editable_5.png)
+#### datetime
 ![datetime](https://kinshines.github.io/img/js-xeditable/x-editable_6.png)
+
 
 
 
