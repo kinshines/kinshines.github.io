@@ -11,9 +11,11 @@ permalink: /archivers/js-x-editable
 
 ### 下载安装
 使用VS创建一个基本的MVC5项目，Nuget安装x-editable
+
         Install-Package x-editable
 
 涉及到编辑日期和时间的话，需要安装Moment.js
+
         Install-Package Moment.js
 
 ### 引用
