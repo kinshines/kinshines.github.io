@@ -154,17 +154,25 @@ Body=>raw:
         },
         "properties": 
         {
-            "content": 
+            "title": 
             {
                 "type": "text",
                 "analyzer": "ik_max_word",
                 "search_analyzer": "ik_max_word",
                 "include_in_all": "true",
                 "boost": 8
+            },
+            "content": 
+            {
+                "type": "text",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word",
+                "include_in_all": "true",
+                "boost": 4
             }
         }
     }
 }
 {% endhighlight %}
 
-
+### 索引数据初始化
