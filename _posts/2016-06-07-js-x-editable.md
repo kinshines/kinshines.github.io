@@ -111,7 +111,7 @@ HomeController修改如下：
 <h3>select</h3>
 <div class="row">
     <div class="col-md-3">
-        <a href="#" id="status" data-type="select" data-pk="1"></a>
+        <a href="#" id="status" data-type="select" data-pk="1" data-value="2"></a>
     </div>
 </div>
 <h3>date</h3>
@@ -135,7 +135,6 @@ HomeController修改如下：
 
 @section scripts{ 
     <script>
-        $.fn.editable.defaults.mode = 'inline';
         $.fn.combodate.defaults.minYear = 2010;
         $.fn.combodate.defaults.maxYear = 2020;
         $.fn.combodate.defaults.firstItem = name;
@@ -158,7 +157,6 @@ HomeController修改如下：
             $('#status').editable({
                 url: '/home/edit',
                 title:'Select status',
-                value: 2,
                 source: '/home/selectsource'
             });
 
@@ -199,6 +197,18 @@ HomeController修改如下：
         });
     </script>
 }
+{% endhighlight %}
+
+但是如果渲染的是一个table，想使每一行editable生效，就不能通过元素的id属性调用该方法，而应该使用data-name属性，如下：
+{% highlight html %}
+<a href="#" data-name="username" data-type="text" data-pk="1" data-url="/home/edit" data-title="Enter username">superuser</a>
+<script>
+$("a[data-name='username']").editable({
+                success: function (response, newValue) {
+                    if (response.status == 'error') return response.msg; //msg will be shown in editable form
+                }
+            });
+</script>
 {% endhighlight %}
 
 ### 效果
