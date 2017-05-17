@@ -33,7 +33,5 @@ success: function (data) {
 action设置参数：int[] ids
 {% highlight java %}
 public ActionResult UpdateByIds(int[] ids)  
-        {
-            
-        }  
+{}  
 {% endhighlight %}
