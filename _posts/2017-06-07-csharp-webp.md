@@ -1,19 +1,18 @@
 ---
 layout: post
-title: Whats Jekyll?
+title: C#中生成webp格式的图片
 author: kinshines
 date:   2017-06-07
 categories: c#
 permalink: /archivers/csharp-webp
 ---
 
-<p class="lead">在将普通图片格式转换成webp格式，之前使用一直是使用命令行的方式调用<a href="https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html">cwebp.exe</a>，cwebp.exe<a href="https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html">下载地址</a>.本文将尝试在C#中直接调用libwebp.dll的方式来生成webp格式的图片</p>
+<p class="lead">在将普通图片格式转换成webp格式时，之前一直是使用命令行的方式调用<a href="https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html">cwebp.exe</a>，cwebp.exe<a href="https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html">下载地址</a>.本文将尝试在C#中直接调用libwebp.dll的方式来生成webp格式的图片</p>
 
 ### 编译或下载libwebp.dll
 
 由于谷歌只提供了libwebp.lib，目前最新的版本是0.6.0，需要我们自行编译成libwebp.dll以便C#调用，或者从以下地址直接下载：
 [x86_64/libwebp.dll](https://s3.amazonaws.com/resizer-dynamic-downloads/webp/0.6.0/x86_64/libwebp.dll)
-
 [x86/libwebp.dll](https://s3.amazonaws.com/resizer-dynamic-downloads/webp/0.5.2/x86/libwebp.dll)
 
 ### 调用libwebp.dll的中间类
