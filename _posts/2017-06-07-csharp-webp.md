@@ -333,4 +333,8 @@ class Program
 {% endhighlight %}
 
 ### C++ Redistributable
-在部署至服务器上时，如果服务器上没有安装Visual C++ 库的运行时组件，将无法调用libwebp.dll，因此需要下载并安装[Visual C++ Redistributable](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)
+在部署至服务器上时，如果服务器上没有安装Visual C++ 库的运行时组件，将无法调用libwebp.dll，具体会报如下的错误:
+
+        System.DllNotFoundException: Unable to load DLL 'libwebp': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
+
+因此需要下载并安装[Visual C++ Redistributable](https://www.microsoft.com/zh-cn/download/details.aspx?id=48145)
