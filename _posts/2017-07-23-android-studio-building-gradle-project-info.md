@@ -12,7 +12,7 @@ permalink: /archivers/android-studio-building-gradle-project-info-waiting
 
 索性直接去官网[Gradle Distributions](http://services.gradle.org/distributions/)上，找到对应的版本下载地址，使用迅雷几秒钟下载完成后，将zip压缩包直接放到C:\Users\Admin\\.gradle\wrapper\dists\gradle-3.3-all目录下。重启AndroidStudio，新建项目时，发现它在上面提到的目录下创建了一个名为55gk2rcmfc6p2dg9u9ohc3hw9的文件夹，仍然去下载gradle-3.3-all.zip 并在该目录下生成了.part和.lock文件
 
-于是又将gradle-3.3-all.zip文件移动到这个55gk2rcmfc6p2dg9u9ohc3hw9文件夹下(怀疑命名是随机的，在其他电脑或版本上一定要是这个名字)，并删除gradle-3.3-all.zip.part。再次重启AndroidStudio，新建项目，发现AndroidStudio可以识别到我放置的gradle-3.3-all.zip文件，并自行解压，问题解决。
+于是又将gradle-3.3-all.zip文件移动到这个55gk2rcmfc6p2dg9u9ohc3hw9文件夹下(怀疑命名是随机的，在其他电脑或版本上不一定要是叫这个名字)，并删除gradle-3.3-all.zip.part。再次重启AndroidStudio，新建项目，发现AndroidStudio可以识别到我放置的gradle-3.3-all.zip文件，并自行解压，问题解决。
 
 
 最近一位在读博士生同学的导师交给他一个安卓App的项目，可惜他学的是电气自动化，对这种App开发不在行，于是找我帮忙，我想正好借这个机会了解一下使用Kotlin开发安卓App，希望自己能坚持将学习过程中的心得和体会记录下来，加油……
