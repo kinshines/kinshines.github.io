@@ -7,7 +7,7 @@ categories: android
 permalink: /archivers/android-studio-gradle-dependencies-repositories
 ---
 
-今天要需要在Android的项目里调用WebService，在app/build.gradle文件里添加[ksoap2-android](https://github.com/simpligility/ksoap2-android) dependencies
+今天需要在Android的项目里调用WebService，需要用到第三方jar包[ksoap2-android](https://github.com/simpligility/ksoap2-android) 在app/build.gradle文件里添加 dependencies
 
 {% highlight js %}
 
