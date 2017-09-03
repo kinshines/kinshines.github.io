@@ -2,7 +2,7 @@
 layout: post
 title: AndroidStudio 不能解析maven.google.com
 author: kinshines
-date:   2016-08-25
+date:   2017-08-25
 categories: android
 permalink: /archivers/android-studio-resolve-maven-google-com
 ---

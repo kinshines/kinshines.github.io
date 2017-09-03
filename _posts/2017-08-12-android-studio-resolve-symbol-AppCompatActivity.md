@@ -2,7 +2,7 @@
 layout: post
 title: AndroidStudio在异常关机后报错：Cannot resolve symbol 'AppCompatActivity'
 author: kinshines
-date:   2016-08-12
+date:   2017-08-12
 categories: android
 permalink: /archivers/android-studio-resolve-symbol-AppCompatActivity
 ---

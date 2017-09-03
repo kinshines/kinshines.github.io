@@ -2,7 +2,7 @@
 layout: post
 title: AndroidStudio在build.gradle添加dependencies时提供repositories
 author: kinshines
-date:   2016-08-04
+date:   2017-08-04
 categories: android
 permalink: /archivers/android-studio-gradle-dependencies-repositories
 ---
