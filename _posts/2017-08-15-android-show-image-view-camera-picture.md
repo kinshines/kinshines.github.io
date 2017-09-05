@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android通过ImageView显示刚拍摄的照片
+title: Android使用ImageView通过Camera拍摄照片的 file path 呈现图像
 author: kinshines
 date:   2017-08-15
 categories: android
