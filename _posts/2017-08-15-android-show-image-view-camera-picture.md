@@ -77,3 +77,17 @@ decodeSampledBitmap 及相关函数定义如下：
 最后别忘了还要在manifest文件声明权限噢
 
                 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+下面是在另一个项目里面看到类似的解决方法，原理类似，但代码量小很多，在这里一并记录下来
+
+{% highlight java %}
+    public Bitmap decodeSampledBitmap(String path) {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(path, options);
+        double ratio = Math.max(options.outWidth * 1.0d / 1024f, options.outHeight * 1.0d / 1024f);
+        options.inSampleSize = (int) Math.ceil(ratio);
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(path, options);
+    }
+{% endhighlight %}
