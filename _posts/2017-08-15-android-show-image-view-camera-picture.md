@@ -10,15 +10,15 @@ permalink: /archivers/android-show-image-view-from-camera-picture-file-path
 今天在用Android Studio 调试项目时，想通过ImageView显示刚拍摄的照片，但是一直显示空白，刚开始通过stackoverflow找的的简单解决方案是：
 
 {% highlight java %}
-        Bitmap bitmap=BitmapFactory.decodeFile(imageUri.getPath());
-        imageView.setImageBitmap(bitmap);
+    Bitmap bitmap=BitmapFactory.decodeFile(imageUri.getPath());
+    imageView.setImageBitmap(bitmap);
 {% endhighlight %}
 
 但仍然无效，近一步搜索得知是摄像机拍摄的照片尺寸过大导致的，需要使用以下方法调整显示大小方可正常显示
 
 {% highlight java %}
-        Bitmap bitmap=decodeSampledBitmap(imageUri.getPath());
-        imageView.setImageBitmap(bitmap);
+    Bitmap bitmap=decodeSampledBitmap(imageUri.getPath());
+    imageView.setImageBitmap(bitmap);
 {% endhighlight %}
 
 decodeSampledBitmap 及相关函数定义如下：
