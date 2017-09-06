@@ -12,7 +12,10 @@ permalink: /archivers/redis-keyspace-notification
 键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件，例如redis的缓存过期事件，缓存移除事件等等，因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态，可以通过修改 redis.conf 文件， 或者直接使用 CONFIG SET 命令来开启或关闭键空间通知功能：
 * 当 notify-keyspace-events 选项的参数为空字符串时，功能关闭
 * 另一方面，当参数不是空字符串时，功能开启
+
+
 notify-keyspace-events 的参数可以是以下字符的任意组合， 它指定了服务器该发送哪些类型的通知：
+
 <table>
   <thead>
     <tr>
