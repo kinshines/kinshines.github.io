@@ -14,67 +14,7 @@ permalink: /archivers/redis-keyspace-notification
 * 当 notify-keyspace-events 选项的参数为空字符串时，功能关闭
 * 另一方面，当参数不是空字符串时，功能开启
 
-
-notify-keyspace-events 的参数可以是以下字符的任意组合， 它指定了服务器该发送哪些类型的通知：
-
-<table>
-  <thead>
-    <tr>
-      <th>字符</th>
-      <th>发送的通知</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>K</td>
-      <td>键空间通知，所有通知以 __keyspace@<db>__ 为前缀</td>
-    </tr>
-    <tr>
-      <td>E</td>
-      <td>键事件通知，所有通知以 __keyevent@<db>__ 为前缀</td>
-    </tr>
-    <tr>
-      <td>g</td>
-      <td>DEL 、 EXPIRE 、 RENAME 等类型无关的通用命令的通知</td>
-    </tr>
-    <tr>
-      <td>$</td>
-      <td>字符串命令的通知</td>
-    </tr>
-    <tr>
-      <td>l</td>
-      <td>列表命令的通知</td>
-    </tr>
-    <tr>
-      <td>s</td>
-      <td>集合命令的通知</td>
-    </tr>
-    <tr>
-      <td>h</td>
-      <td>哈希命令的通知</td>
-    </tr>
-    <tr>
-      <td>z</td>
-      <td>有序集合命令的通知</td>
-    </tr>
-    <tr>
-      <td>x</td>
-      <td>过期事件：每当有过期键被删除时发送</td>
-    </tr>
-    <tr>
-      <td>e</td>
-      <td>驱逐(evict)事件：每当有键因为 maxmemory 政策而被删除时发送</td>
-    </tr>
-    <tr>
-      <td>A</td>
-      <td>参数 g$lshzxe 的别名，即所有通知</td>
-    </tr>
-    </tbody>
-  </table>
-
-
 这里为了演示，我开启了所有通知，在生产环境下，只需要开启需要的通知即可，命令如下：
-
 
         CONFIG SET notify-keyspace-events KEA
 
