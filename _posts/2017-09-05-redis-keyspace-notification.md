@@ -68,8 +68,8 @@ notify-keyspace-events 的参数可以是以下字符的任意组合， 它指�
       <td>A</td>
       <td>参数 g$lshzxe 的别名，即所有通知</td>
     </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
 
 这里为了演示，我开启了所有通知，在生产环境下，只需要开启需要的通知即可，命令如下：
