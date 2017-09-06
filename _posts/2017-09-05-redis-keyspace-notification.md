@@ -114,5 +114,7 @@ namespace StackExchange.Redis
 以上代码需要引用 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis)
 
 延伸阅读：
+
 [键空间通知](http://redisdoc.com/topic/notification.html)
+
 [Redis Keyspace Notifications](https://redis.io/topics/notifications)
