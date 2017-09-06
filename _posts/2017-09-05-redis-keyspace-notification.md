@@ -10,6 +10,7 @@ permalink: /archivers/redis-keyspace-notification
 <p class="lead">使用redis持久化数据时，当内存资源比较紧缺时，会导致部分使用不太频繁的redis数据丢失，这种情况下，需要监控redis的数据，以便在redis数据意外丢失的情况下，及时补救。另外还有一种应用场景是倒计时功能，例如淘宝的还剩几天自动确认收货，在这种情况下，需要程序在某个倒计时的时机自动触发。下面介绍的redis 键空间通知(keyspace notifications)的功能可以完成此类功能</p>
 
 键空间通知使得客户端可以通过订阅频道或模式， 来接收那些以某种方式改动了 Redis 数据集的事件，例如redis的缓存过期事件，缓存移除事件等等，因为开启键空间通知功能需要消耗一些 CPU ， 所以在默认配置下， 该功能处于关闭状态，可以通过修改 redis.conf 文件， 或者直接使用 CONFIG SET 命令来开启或关闭键空间通知功能：
+
 * 当 notify-keyspace-events 选项的参数为空字符串时，功能关闭
 * 另一方面，当参数不是空字符串时，功能开启
 
