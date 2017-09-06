@@ -71,6 +71,7 @@ notify-keyspace-events 的参数可以是以下字符的任意组合， 它指�
   </tbody>
 </table>
 
+
 这里为了演示，我开启了所有通知，在生产环境下，只需要开启需要的通知即可，命令如下：
 
         CONFIG SET notify-keyspace-events KEA
@@ -167,4 +168,5 @@ namespace StackExchange.Redis
 }
 {% endhighlight %}
 
-以上代码需要引用[StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/)
+
+以上代码需要引用 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis)
