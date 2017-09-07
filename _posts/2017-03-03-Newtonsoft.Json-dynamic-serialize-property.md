@@ -4,7 +4,7 @@ title: Newtonsoft Json.NET动态决定属性是否序列化
 author: kinshines
 date:   2017-03-03
 categories: c#
-permalink: /archivers/Newtonsoft.Json-dynamic-serialize-property
+permalink: /archivers/Newtonsoft-Json-dynamic-serialize-property
 ---
 
 <p class="lead">今天遇到一个需求，将一个类序列化时，需要动态决定哪些属性是否执行序列化。Json.NET作为一款强大的json序列化工具，提供ContractResolver以实现神乎奇技的高度动态化</p>
