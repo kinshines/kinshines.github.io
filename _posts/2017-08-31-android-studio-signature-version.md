@@ -10,6 +10,7 @@ permalink: /archivers/android-studio-signature-version
 <p class="lead">使用Android Studio ,打正式包的时候发现有两个签名版本选择：
 
 ![Signature Version](https://kinshines.github.io/img/android-dev/signature-version.png)
+
 因为刚开始默认勾选的v2(Full APK Signature)，结果在测试机上（4.4.2）一直都安装失败，想着和那个选择签名版本有关系，那就查查吧。</p>
 
 ### 问题描述(v1和v2)
@@ -25,7 +26,7 @@ v1和v2的签名使用
 
 ### 解决方案二
 在app的build.gradle的android标签下加入：
-{% highlight json%}
+{% highlight java%}
 signingConfigs {  
     debug {  
         v1SigningEnabled true  
