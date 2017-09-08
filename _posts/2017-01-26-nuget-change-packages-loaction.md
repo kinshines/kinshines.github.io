@@ -27,7 +27,13 @@ nuget.config内容如下：
 </configuration>
 {% endhighlight %}
 
-其中repositoryPath的value值即可以是绝对目录如：C:\thePathToMyPackagesFolder，也可以是相对目录如：../packages
+其中repositoryPath的value值既可以是绝对目录如：
+
+    C:\thePathToMyPackagesFolder
+    
+也可以是相对目录如：
+
+    ../packages
 
 
 延伸阅读：
