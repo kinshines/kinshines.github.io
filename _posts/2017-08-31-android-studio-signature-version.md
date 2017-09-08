@@ -9,7 +9,7 @@ permalink: /archivers/android-studio-signature-version
 
 <p class="lead">使用Android Studio ,打正式包的时候发现有两个签名版本选择：
 
-<img src="https://kinshines.github.io/img/android-dev/signature-version.png"/>
+<img src="https://kinshines.github.io/img/android-dev/signature_version.png"/>
 
 因为刚开始默认勾选的v2(Full APK Signature)，结果在测试机上（4.4.2）一直都安装失败，想着和那个选择签名版本有关系，那就查查吧。</p>
 
