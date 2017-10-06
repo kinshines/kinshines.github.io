@@ -15,7 +15,7 @@ permalink: /archivers/java-csharp-aes
 
 填充方法：Java的PKCS5Padding对应C#System.Security.Cryptography.PaddingMode.PKCS7
 
-编码明确指定了采用UTF-8
+编码指定采用UTF-8
 
 ### Java
 
@@ -120,3 +120,20 @@ namespace CSharp.Util.Security
 
 ### 后记
 
+在Java中的AES实现里，可以看到 key 的简单实现是：
+
+        new SecretKeySpec(key.getBytes("utf-8"), "AES")
+      
+但是网上搜到很多的实现方案如下：
+
+{% highlight java %}
+        KeyGenerator kgen = KeyGenerator.getInstance("AES");
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+        sr.setSeed(seed);
+        kgen.init(128, sr);
+        SecretKey sKey = kgen.generateKey();
+{% endhighlight %}
+
+这里实际上是调用了Java内部的密钥生成器来生成密钥，输入一个任意位数的seed，可以生成一个128bit的密钥，但是在C#中没有类似的实现，因此如果Java方使用了以上的密钥生成器来生成的密钥，则需要将密钥生成器生成的密钥告知C#方，双方才能正常通信。
+
+当然，简单的处理方式如同上文，即Java方不要使用密钥生成器，而是直接使用双方约定好的16位的密钥
