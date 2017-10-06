@@ -11,12 +11,13 @@ permalink: /archivers/asp-net-core-setting
 
 
 ### 定义一个包含配置项的类，Configuration/DemoSettings.cs
-
-        public class DemoSettings
-        {
-                public string MainDomain { get; set; }
-                public string SiteName { get; set; }
-        }
+{% highlight java %}
+public class DemoSettings
+{
+    public string MainDomain { get; set; }
+    public string SiteName { get; set; }
+}
+{% endhighlight %}
 
 appsettings.json 内容如下：
 
