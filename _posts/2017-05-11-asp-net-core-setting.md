@@ -3,7 +3,7 @@ layout: post
 title: ASP.NET Core 获取配置项
 author: kinshines
 date:   2017-05-11
-categories: core
+categories: .net core
 permalink: /archivers/asp-net-core-setting
 ---
 
