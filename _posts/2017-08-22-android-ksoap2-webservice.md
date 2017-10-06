@@ -9,7 +9,14 @@ permalink: /archivers/android-ksoap2-webservice
 
 <p class="lead">Android 开发过程中与Web接口通信时，Server端规定了WebService，虽然不理解这个年代为什么还有人在使用WebService这即将淘汰的技术。在我的印象中，基于Http协议的Web Api早已成主流，通信的数据格式也基本上统一是json了，不过没办法，这个既然人家已经定好了，也只能按照要求搞下去了， </p>
 
+
+
+### build.gradle
 首先，Android开发中访问WebService主要用到的Java类库是 [Ksoap2](http://ksoap2.sourceforge.net/)
+
+因此主要的build.gradle文件中的dependencies添加依赖
+
+            compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.2'
 
 ### Main.xml
 
