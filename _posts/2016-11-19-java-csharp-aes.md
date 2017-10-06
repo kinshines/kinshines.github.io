@@ -9,7 +9,7 @@ permalink: /archivers/java-csharp-aes
 
 <p class="lead">AES(Advanced Encryption Standard)加密作为对称密钥加密中最流行的算法之一，应用在重要的数据接口传输中，然而在对接双方分别使用Java和C#作为编程语言时，对接过程往往会出现各种问题，下面分别是这两种语言的实现，已实现加解密互通。</p>
 
-这里采用的加解密使用base64转码方法，ECB模式，PKCS5Padding填充，密码必须是16位，否则会报错哈
+这里采用的加解密使用base64转码方法，ECB模式，PKCS5Padding填充，无向量，密码必须是16位，否则会报错哈
 
 模式：Java的ECB对应C#的System.Security.Cryptography.CipherMode.ECB
 
@@ -55,7 +55,7 @@ public class EncryptUtil {
 {% endhighlight %}
 
 
-### C#
+### C##
 
 {% highlight java %}
 
