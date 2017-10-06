@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Example content
+title: Java-C#双语配套AES加解密
 author: kinshines
 date:   2016-11-19
 categories: c#
-permalink: /archivers/Java-C#双语配套AES加解密
+permalink: /archivers/java-csharp-aes
 ---
 
 <p class="lead">AES(Advanced Encryption Standard)加密作为对称密钥加密中最流行的算法之一，应用在重要的数据接口传输中，然而在对接双方分别使用Java和C#作为编程语言时，对接过程往往会出现各种问题，下面分别是这两种语言的实现，已实现加解密互通。</p>
