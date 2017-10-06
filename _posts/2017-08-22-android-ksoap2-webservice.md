@@ -14,9 +14,9 @@ permalink: /archivers/android-ksoap2-webservice
 ### build.gradle
 首先，Android开发中访问WebService主要用到的Java类库是 [Ksoap2](http://ksoap2.sourceforge.net/)
 
-因此主要的build.gradle文件中的dependencies添加依赖
+因此需要向build.gradle文件中的dependencies添加依赖：
 
-            compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.2'
+        compile 'com.google.code.ksoap2-android:ksoap2-android:3.6.2'
 
 ### Main.xml
 
@@ -65,7 +65,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
-@SuppressLint(“SdCardPath")
+@SuppressLint("SdCardPath")
 public class MainActivity extends Activity {
 InputStream is=null;
 byte[] array;
@@ -89,7 +89,7 @@ is.close();
 }catch (Exception e){
 e.printStackTrace();
 try {
-throw new IOException(“Unable to open R.raw.");
+throw new IOException("Unable to open R.raw.");
 } catch (IOException e1) {
 e1.printStackTrace();
 }
@@ -105,7 +105,7 @@ final String NAMESPACE ="http://tempuri.org/";
 final String URL ="Your WSDL URL";
 try{
 SoapObject so=new SoapObject(NAMESPACE, METHOD_NAME);
-so.addProperty(“BArray", array);
+so.addProperty("BArray", array);
 SoapSerializationEnvelope sse=new SoapSerializationEnvelope(SoapEnvelope.VER11);
 new MarshalBase64().register(sse);
 sse.dotNet=true;
@@ -114,7 +114,7 @@ HttpTransportSE htse=new HttpTransportSE(URL);
 htse.call(SOAP_ACTION, sse);
 SoapPrimitive response=(SoapPrimitive) sse.getResponse();
 String str=response.toString();
-System.out.println(“"+str);
+System.out.println(""+str);
 Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();
 } catch (Exception e) {
 e.printStackTrace();
