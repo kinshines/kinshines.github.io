@@ -3,7 +3,7 @@ layout: post
 title: 常见设备的媒体查询(media query)
 author: kinshines
 date:   2017-04-27
-categories: css
+categories: html
 permalink: /archivers/media-queries-for-standard-devices
 ---
 

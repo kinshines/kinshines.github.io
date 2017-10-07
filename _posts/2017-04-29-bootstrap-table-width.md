@@ -3,7 +3,7 @@ layout: post
 title: bootstrap 控制table中列宽度
 author: kinshines
 date:   2017-04-29
-categories: css
+categories: html
 permalink: /archivers/bootstrap-table-column-width
 ---
 
