@@ -11,13 +11,13 @@ permalink: /archivers/csharp-datatable-select
 
 微软提供了四个函数的重载，分别是
 
-                Select()
+        Select()
 
-                Select(string filterExpression)
+        Select(string filterExpression)
 
-                Select(string filterExpression, string sort)
+        Select(string filterExpression, string sort)
 
-                Select(string filterExpression,string sort, DataViewRowState record States)
+        Select(string filterExpression,string sort, DataViewRowState record States)
 
 1.  Select()——获取所有 System.Data.DataRow 对象的数组。
 
@@ -31,73 +31,39 @@ permalink: /archivers/csharp-datatable-select
 
 {% highlight java %}
 using System;
-
 using System.Collections.Generic;
-
 using System.Text;
-
 using System.Data;
 
- 
-
 namespace TestDataTableSelect
-
 {
-
     class Program
-
     {
-
         static DataTable dt = new DataTable();
-
         static void Main(string[] args)
-
         {         
-
             DataColumn dc1 = new DataColumn("id");
-
             dc1.DataType=typeof(int);
-
             DataColumn dc2 = new DataColumn("name");
-
             dc2.DataType=typeof(System.String);
-
             dt.Columns.Add(dc1);
-
             dt.Columns.Add(dc2);
-
             for (int i = 1; i <=10;i++ )
-
             {
-
                 DataRow dr = dt.NewRow();
-
                 if (i <= 5)
-
                 {
-
                     dr[0] = i;
-
                     dr[1] = i + "--" + "hello";
-
                 }
-
                 else
-
                 {
-
                     dr[0] = i;
-
                     dr[1] = i + "--" + "nihao";
-
                 }
-
                 dt.Rows.Add(dr);
-
             }
-
  
-
             Select();
 
             Select("id>='3' and name='3--hello'");//支持and
@@ -109,91 +75,48 @@ namespace TestDataTableSelect
             Select("id>5","id desc");
 
             Select("id>5", "id desc",DataViewRowState.Added);
-
         }
-
  
-
         private static void Select()
-
         {
-
             DataRow[] arrayDR = dt.Select();
-
             foreach(DataRow dr in arrayDR)
-
             {
-
                 Console.WriteLine(dr[0].ToString()+"    "+dr[1].ToString());
-
             }
-
             Console.ReadLine();
-
         }
-
- 
 
         private static void Select(string filterExpression)
-
         {
-
             DataRow[] arrayDR = dt.Select(filterExpression);
-
             foreach (DataRow dr in arrayDR)
-
             {
-
                 Console.WriteLine(dr[0].ToString() + "    " + dr[1].ToString());
-
             }
-
             Console.ReadLine();
-
         }
-
- 
 
         private static void Select(string filterExpression, string sort)
-
         {
-
             DataRow[] arrayDR = dt.Select(filterExpression,sort);
-
             foreach (DataRow dr in arrayDR)
-
             {
-
                 Console.WriteLine(dr[0].ToString() + "    " + dr[1].ToString());
-
             }
-
             Console.ReadLine();
-
         }
-
  
-
         private static void Select(string filterExpression, string sort, DataViewRowState recordStates)
-
         {
-
             DataRow[] arrayDR = dt.Select(filterExpression, sort,recordStates);
-
             foreach (DataRow dr in arrayDR)
-
             {
-
                 Console.WriteLine(dr[0].ToString() + "    " + dr[1].ToString());
-
             }
-
             Console.ReadLine();
-
         }
-
     }
-
 }
 {% endhighlight %}
 
