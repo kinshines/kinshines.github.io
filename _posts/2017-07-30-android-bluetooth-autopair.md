@@ -15,17 +15,12 @@ permalink: /archivers/android-bluetooth-autopair
 3. 若目标蓝牙设备为Android手机的蓝牙，则只能保证本设备不弹出配对框，对方还是会弹出配对框。但是！！不管目标蓝牙点击“确认”or“取消”，在本设备中都显示已经成功配对。实测表明，确实已经配对了，可以进行数据传输。
 4. 由于使用了广播机制，所以需要在Androidmanifest.xml进行如下配置：
 
-    先配置蓝牙使用权限：
+    先配置蓝牙使用权限，然后配置action，将需要用到的广播进行注册：
 
     {% highlight xml %}
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/> 
-    {% endhighlight %}
-    
-    
-    然后配置action，将需要用到的广播进行注册
 
-    {% highlight xml %}
     <receiver android:name="com.example.mybuletooth.broadcast.BluetoothReceiver" >
       <intent-filter android:priority="1000">
           <action android:name="android.bluetooth.device.action.PAIRING_REQUEST"/>
