@@ -84,7 +84,7 @@ document.writeln( $uid.prop("checked") ); // false
 <a href="#" id="link1" action="delete">删除</a>
 {% endhighlight %}
 
-第1个a元素的DOM属性有"href、target和class"，这些属性就是<a>元素本身就带有的属性，也是W3C标准里就包含有这几个属性，或者说在IDE里能够智能提示出的属性，这些就叫做固有属性。处理这些属性时，建议使用prop方法。
+第1个a元素的DOM属性有"href、target和class"，这些属性就是a元素本身就带有的属性，也是W3C标准里就包含有这几个属性，或者说在IDE里能够智能提示出的属性，这些就叫做固有属性。处理这些属性时，建议使用prop方法。
 
 第2个a元素属性有"href、id和action"，很明显，前两个是固有属性，而后面一个"action"属性是我们自己自定义上去的，a元素本身是没有这个属性的。这种就是自定义的DOM属性。处理这些属性时，建议使用attr方法。使用prop方法取值和设置属性值时，都会返回undefined值
 
