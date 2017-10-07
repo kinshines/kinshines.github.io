@@ -2,7 +2,7 @@
 layout: post
 title: Elasticsearch修改最大Java堆大小
 author: kinshines
-date:   2017-07-26
+date:   2017-07-16
 categories: db
 permalink: /archivers/elasticsearch-java-heap-size
 ---
