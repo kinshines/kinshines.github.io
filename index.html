@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<h1 class="content-inner-title myFont css2dcc4b9955748">Articles</h1>
+<h2 class="content-inner-title myFont css2dcc4b9955748">Articles</h2>
 <div class="content-main">
 	 <ul class="post-list">
 	    {% for post in paginator.posts %}
 	      <li>
-	        <h2>
+	        <h3>
 	          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-	        </h2>
+	        </h3>
 	        
 	        <div class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</div>
 

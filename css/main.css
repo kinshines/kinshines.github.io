@@ -122,7 +122,9 @@ main {
       .content .content-main .post-list li .post-excerpt {
         color: #222;
         font-size: 13px; }
-
+.content .content-main .post-list li .post-excerpt p.lead {
+        font-size: 16px;
+        margin-bottom: 5px; }
 .sidebar {
   width: 280px;
   float: left;
