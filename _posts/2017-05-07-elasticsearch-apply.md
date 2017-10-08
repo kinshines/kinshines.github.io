@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Elasticsearch搜索引擎
+title: Elasticsearch搜索引擎搭建及应用
 author: kinshines
 date:   2017-05-07
 categories: db
-permalink: /archivers/elastic-search
+permalink: /archivers/elastic-search-apply
 ---
 
-<p class="lead"><a href="https://www.elastic.co">Elasticsearch</a>是当今比较流行的搜索引擎，前段时间为公司搭建了一套，用于搜索平台收录的App，今天有时间整理一下，本文以Elasticsearch 5.4.0版本为例，参考官方文档<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Elasticsearch Reference</a></p>
+<p class="lead"><a href="https://www.elastic.co">Elasticsearch</a>是当今比较流行的搜索引擎，前段时间搭建了一套用于App资源的搜索服务，今天有时间整理一下，本文以Elasticsearch 5.4.0版本为例，参考官方文档<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html">Elasticsearch Reference</a>
+本文假设以搜索博客(blog)文章为需求基础，搜索时要求基于blog 的 title 和 content 两个维度作模糊匹配
+</p>
 
 ### 基本概念
 关于Elasticsearch，有几个核心的概念需要理解，理解这几个概念有助于加快学习进程
@@ -118,7 +120,7 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
 
 使用Postman发送PUT请求：
 
-        http://localhost:9200/blog?pretty
+        http://localhost:9200/forum?pretty
 
 再次发送GET请求：
 
@@ -128,7 +130,7 @@ health status index uuid pri rep docs.count docs.deleted store.size pri.store.si
 
 health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 
-yellow open   blog TfuBu8gvSFqVTQuFTqtUNg   5   1          0            0       650b           650b
+yellow open   forum TfuBu8gvSFqVTQuFTqtUNg   5   1          0            0       650b           650b
 
 ### 配置IK分词插件
 [elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)是一款优秀的中文分词插件，笔者在写作这篇文章时，ik尚未提供5.4.0版本的release，只能git checkout 源码后marven重新编译获得elasticsearch-analysis-ik-5.4.0.zip
@@ -138,12 +140,12 @@ yellow open   blog TfuBu8gvSFqVTQuFTqtUNg   5   1          0            0       
 ### 创建mapping
 使用Postman发送POST请求：
 
-        http://localhost:9200/blog/post/_mapping
+        http://localhost:9200/forum/blog/_mapping
 
 Body=>raw:
 {% highlight js %}
 {
-    "post": 
+    "blog": 
     {
         "_all": 
         {
@@ -159,8 +161,7 @@ Body=>raw:
                 "type": "text",
                 "analyzer": "ik_max_word",
                 "search_analyzer": "ik_max_word",
-                "include_in_all": "true",
-                "boost": 8
+                "include_in_all": "true"
             },
             "content": 
             {
@@ -168,11 +169,67 @@ Body=>raw:
                 "analyzer": "ik_max_word",
                 "search_analyzer": "ik_max_word",
                 "include_in_all": "true",
-                "boost": 4
             }
         }
     }
 }
 {% endhighlight %}
 
-### 索引数据初始化
+### .Net 应用 ElasticSearch 搜索
+
+首先，需要两个nuget package：
+
+        Install-Package Elasticsearch.Net 
+        Install-Package NEST
+
+然后写一个与索引对应的Model 类：
+
+{% highlight java %}
+    [ElasticsearchType(IdProperty = "id", Name = "blog")]
+    public class Blog
+    {
+        public int id { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
+        public DateTime timestamp { get; set; }
+    }
+{% endhighlight %}
+
+在初始化索引的过程中，考虑到数据量较大，一般采用bulk 方法操作List来初始化索引
+
+#### Create
+
+        client.Bulk(u => u.Index("forum").CreateMany<Blog>(list));
+
+#### Update 
+
+        var bulkQuest = new BulkRequest() { Operations = new List<IBulkOperation>() };
+        foreach (var v in lst)
+        {
+                var operation = new BulkUpdateOperation<Blog, object>(v.id);
+                operation.Doc = v;
+                operation.Index = "forum";
+                bulkQuest.Operations.Add(operation);
+        }
+        client.Bulk(bulkQuest);
+
+#### Delete
+
+        client.Bulk(u => u.Index("forum").DeleteMany<Blog>(list));
+
+#### Search
+
+        var request = new SearchRequest("forum", "blog")
+            {
+                From = from-1,
+                Size = to-from+1,
+                Query = new DisMaxQuery()
+                {
+                    Queries = new List<QueryContainer>()
+                    {
+                        new MatchQuery() {Field = "title", Query = keywords},
+                        new MatchQuery() {Field = "content", Query = keywords}
+                    }
+                }
+            };
+            var response = client.Search<Blog>(request);

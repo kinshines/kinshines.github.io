@@ -4,7 +4,7 @@ title: ASP.NET Core 获取配置项
 author: kinshines
 date:   2017-05-11
 categories: core
-permalink: /archivers/asp-net-core-app-setting
+permalink: /archivers/net-core-app-setting
 ---
 
 <p class="lead">在 ASP.NET Core 应用中，已无法通过 ConfigurationManager.AppSettings  中获取配置项，另外 ASP.NET Core 也不建议将配置项写在web.config中，而是记在appsettings.json，本文将介绍在 ASP.NET Core 获取配置项的方式</p>
