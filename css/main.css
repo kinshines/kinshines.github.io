@@ -153,7 +153,7 @@ main {
     .sidebar li a:hover {
       text-decoration: underline !important; }
 
-.pagination {
+/*.pagination {
   display: block !important;
   padding-top: 50px;
   border-top: 1px solid #eee; }
@@ -164,7 +164,7 @@ main {
   .pagination span {
     border: 1px solid #eee;
     color: #222;
-    margin: 0 10px; }
+    margin: 0 10px; }*/
 
 .footer-inner {
   font-size: 13px;
