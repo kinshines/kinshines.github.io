@@ -2,7 +2,7 @@
 layout: post
 title: C# 中 Datatable.Select()用法简介
 author: kinshines
-date:   2016-09-13
+date:   2016-01-13
 categories: c#
 permalink: /archivers/csharp-datatable-select
 ---

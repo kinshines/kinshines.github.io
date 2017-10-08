@@ -2,7 +2,7 @@
 layout: post
 title: jQuery函数attr()和prop()的区别
 author: kinshines
-date:   2017-03-25
+date:   2016-03-25
 categories: js
 permalink: /archivers/jquery-attr-vs-prop
 ---

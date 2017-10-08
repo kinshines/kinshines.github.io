@@ -2,7 +2,7 @@
 layout: post
 title: Java-C#双语配套AES加解密
 author: kinshines
-date:   2016-11-19
+date:   2015-11-19
 categories: c#
 permalink: /archivers/java-csharp-aes
 ---

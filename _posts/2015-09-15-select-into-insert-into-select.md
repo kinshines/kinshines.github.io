@@ -2,7 +2,7 @@
 layout: post
 title: SELECT INTO 和 INSERT INTO SELECT 两种表复制语句
 author: kinshines
-date:   2016-08-15
+date:   2015-09-15
 categories: db
 permalink: /archivers/select-into-insert-into-select
 ---

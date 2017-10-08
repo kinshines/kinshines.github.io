@@ -2,7 +2,7 @@
 layout: post
 title: ASP.NET Web API 使用Jil Json作为默认json序列化工具
 author: kinshines
-date:   2016-06-22
+date:   2015-11-22
 categories: webapi
 permalink: /archivers/WebAPI-JilJson
 ---

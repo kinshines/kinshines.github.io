@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript中判断函数、变量是否存在
 author: kinshines
-date:   2017-09-16
+date:   2016-03-16
 categories: js
 permalink: /archivers/js-detect-function
 ---

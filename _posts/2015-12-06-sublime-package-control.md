@@ -2,7 +2,7 @@
 layout: post
 title: Sublime text 2/3 中 Package Control 的安装与使用方法
 author: kinshines
-date:   2016-12-06
+date:   2015-12-06
 categories: develop
 permalink: /archivers/sublime-package-control
 ---

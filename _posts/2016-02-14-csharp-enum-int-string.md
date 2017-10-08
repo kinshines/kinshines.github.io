@@ -2,7 +2,7 @@
 layout: post
 title: C# 中 Enum,Int,String的互相转换
 author: kinshines
-date:   2017-06-14
+date:   2016-02-14
 categories: c#
 permalink: /archivers/csharp-enum-int-string
 ---

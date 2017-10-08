@@ -2,7 +2,7 @@
 layout: post
 title: MVC 关于防止跨域脚本攻击AntiXSS
 author: kinshines
-date:   2016-06-09
+date:   2016-01-09
 categories: mvc
 permalink: /archivers/MVC-AntiXSS-Package
 ---
