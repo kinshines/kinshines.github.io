@@ -2,7 +2,7 @@
 layout: post
 title: 甜甜圈缓存mvcdonutcaching 的使用介绍
 author: kinshines
-date:   2016-04-30
+date:   2015-11-30
 categories: mvc
 permalink: /archivers/mvcdonutcaching
 ---

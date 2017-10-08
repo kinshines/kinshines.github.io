@@ -2,7 +2,7 @@
 layout: post
 title: js中contains方法和indexOf方法
 author: kinshines
-date:   2016-05-05
+date:   2015-11-05
 categories: js
 permalink: /archivers/js-contains-indexof
 ---
