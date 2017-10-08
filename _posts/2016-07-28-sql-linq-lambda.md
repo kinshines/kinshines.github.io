@@ -9,7 +9,7 @@ permalink: /archivers/sql-linq-lambda
 
 <p class="lead">本文将SQL、LINQ、Lambda 三种语法作一个横向对照，便于加深理解。</p>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>SQL</th>
