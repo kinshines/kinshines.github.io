@@ -48,7 +48,7 @@ permalink: /archivers/sql-linq-lambda
             ID = e.LoginID, 
             Title = e.JobTitle
          }
-   )
+      )
       </td>
     </tr>
   </tbody>
