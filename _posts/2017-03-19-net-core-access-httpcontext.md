@@ -2,7 +2,7 @@
 layout: post
 title: .NET Core 获取HttpContext
 author: kinshines
-date:   2017-04-19
+date:   2017-03-19
 categories: core
 permalink: /archivers/net-core-access-httpcontext
 ---

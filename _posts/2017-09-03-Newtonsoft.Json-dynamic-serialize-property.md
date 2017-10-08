@@ -2,7 +2,7 @@
 layout: post
 title: Newtonsoft Json.NET动态决定属性是否序列化
 author: kinshines
-date:   2017-03-03
+date:   2017-09-03
 categories: c#
 permalink: /archivers/Newtonsoft-Json-dynamic-serialize-property
 ---
