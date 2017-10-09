@@ -133,9 +133,41 @@ health status index    uuid                   pri rep docs.count docs.deleted st
 yellow open   forum TfuBu8gvSFqVTQuFTqtUNg   5   1          0            0       650b           650b
 
 ### 配置IK分词插件
-[elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)是一款优秀的中文分词插件，笔者在写作这篇文章时，ik尚未提供5.4.0版本的release，只能git checkout 源码后marven重新编译获得elasticsearch-analysis-ik-5.4.0.zip
+[elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)是一款优秀的中文分词插件，通过[ik-release](https://github.com/medcl/elasticsearch-analysis-ik/releases) 找到与elasticsearch相匹配的版本，如果你使用的ES版本太新，ik的作者尚未提供对应版本的发行版，则只能git checkout 源码后使用marven重新编译获得对应的插件
 
-将编译好的zip包 elasticsearch-analysis-ik-5.4.0.zip解压至elasticsearch-5.4.0\plugins\ik目录下
+将下载或编译好的zip包 elasticsearch-analysis-ik-5.4.0.zip解压至elasticsearch-5.4.0\plugins\analysis-ik目录下
+
+解压后在config目录下放置了ik分词所用到的词典，词典文件列表如下：
+* extra_main.dic
+* extra_single_word.dic
+* extra_single_word_full.dic
+* extra_single_word_low_freq.dic
+* extra_stopword.dic
+* main.dic
+* preposition.dic
+* quantifier.dic
+* stopword.dic
+* suffix.dic
+* surname.dic
+
+需要注意的是，以extra_为前缀的5个词典默认是不加载到词库的，如果想让ik自动加载，那么需要修改
+config目录下的配置文件 IKAnalyzer.cfg.xml
+
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>IK Analyzer 扩展配置</comment>
+	<!--用户可以在这里配置自己的扩展字典 -->
+	<entry key="ext_dict">extra_main.dic;extra_single_word.dic;extra_single_word_full.dic;extra_single_word_low_freq.dic</entry>
+	 <!--用户可以在这里配置自己的扩展停止词字典-->
+	<entry key="ext_stopwords">extra_stopword.dic</entry>
+	<!--用户可以在这里配置远程扩展字典 -->
+	<!-- <entry key="remote_ext_dict">words_location</entry> -->
+	<!--用户可以在这里配置远程扩展停止词字典-->
+	<!-- <entry key="remote_ext_stopwords">words_location</entry> -->
+</properties>
+{% endhighlight %}
 
 ### 创建mapping
 使用Postman发送POST请求：
