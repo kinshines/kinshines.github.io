@@ -46,7 +46,101 @@ Elasticsearch依赖Java 8，首先需要安装[jdk 1.8](http://www.oracle.com/te
 
         ;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin
         
-[Elasticsearch下载地址](https://www.elastic.co/downloads/elasticsearch)，解压至D:\Java\elasticsearch-5.4.0 目录下，运行之前，先修改以下默认配置，打开 \config\elasticsearch.yml 文件，可以看到每一行都以#注释了，所以在修改了某一项后，需要把#去掉，使之生效
+[Elasticsearch下载地址](https://www.elastic.co/downloads/elasticsearch)，解压至D:\Java\elasticsearch-5.4.0 目录下，运行之前，先修改以下默认配置，打开 \config\elasticsearch.yml 文件：
+
+{% highlight yml %}
+# ======================== Elasticsearch Configuration =========================
+#
+# NOTE: Elasticsearch comes with reasonable defaults for most settings.
+#       Before you set out to tweak and tune the configuration, make sure you
+#       understand what are you trying to accomplish and the consequences.
+#
+# The primary way of configuring a node is via this file. This template lists
+# the most important settings you may want to configure for a production cluster.
+#
+# Please consult the documentation for further information on configuration options:
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+#
+# ---------------------------------- Cluster -----------------------------------
+#
+# Use a descriptive name for your cluster:
+#
+#cluster.name: my-application
+#
+# ------------------------------------ Node ------------------------------------
+#
+# Use a descriptive name for the node:
+#
+#node.name: node-1
+#
+# Add custom attributes to the node:
+#
+#node.attr.rack: r1
+#
+# ----------------------------------- Paths ------------------------------------
+#
+# Path to directory where to store the data (separate multiple locations by comma):
+#
+#path.data: /path/to/data
+#
+# Path to log files:
+#
+#path.logs: /path/to/logs
+#
+# ----------------------------------- Memory -----------------------------------
+#
+# Lock the memory on startup:
+#
+#bootstrap.memory_lock: true
+#
+# Make sure that the heap size is set to about half the memory available
+# on the system and that the owner of the process is allowed to use this
+# limit.
+#
+# Elasticsearch performs poorly when the system is swapping the memory.
+#
+# ---------------------------------- Network -----------------------------------
+#
+# Set the bind address to a specific IP (IPv4 or IPv6):
+#
+#network.host: 192.168.0.1
+#
+# Set a custom port for HTTP:
+#
+#http.port: 9200
+#
+# For more information, consult the network module documentation.
+#
+# --------------------------------- Discovery ----------------------------------
+#
+# Pass an initial list of hosts to perform discovery when new node is started:
+# The default list of hosts is ["127.0.0.1", "[::1]"]
+#
+#discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+#
+# Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
+#
+#discovery.zen.minimum_master_nodes: 3
+#
+# For more information, consult the zen discovery module documentation.
+#
+# ---------------------------------- Gateway -----------------------------------
+#
+# Block initial recovery after a full cluster restart until N nodes are started:
+#
+#gateway.recover_after_nodes: 3
+#
+# For more information, consult the gateway module documentation.
+#
+# ---------------------------------- Various -----------------------------------
+#
+# Require explicit names when deleting indices:
+#
+#action.destructive_requires_name: true
+
+{% endhighlight %}
+
+可以看到每一行都以#注释了，所以在修改了某一项后，需要把#去掉，使之生效
 
 首先需要修改第17行，集群名称：
 
@@ -179,28 +273,19 @@ Body=>raw:
 {
     "blog": 
     {
-        "_all": 
-        {
-            "analyzer": "ik_max_word",
-            "search_analyzer": "ik_max_word",
-            "term_vector": "no",
-            "store": "false"
-        },
         "properties": 
         {
             "title": 
             {
                 "type": "text",
                 "analyzer": "ik_max_word",
-                "search_analyzer": "ik_max_word",
-                "include_in_all": "true"
+                "search_analyzer": "ik_max_word"
             },
             "content": 
             {
                 "type": "text",
                 "analyzer": "ik_max_word",
-                "search_analyzer": "ik_max_word",
-                "include_in_all": "true",
+                "search_analyzer": "ik_max_word"
             }
         }
     }
