@@ -180,18 +180,18 @@ permalink: /archivers/kibana-xpack-apply
             http://localhost:9200/_xpack/license?acknowledge=true
 
     Body=>raw 中填入上一步得到的json内容
+
     Authorization=>Type选择Basic Auth
+    
     Username填写：elastic
     Password填写：changeme
 
     Send后正确响应：
 
-    {% highlight js %}
-    {
-        "acknowledged": true,
-        "license_status": "valid"
-    }
-    {% endhighlight %}
+            {
+                "acknowledged": true,
+                "license_status": "valid"
+            }
 
 8. 查看 License
     使用Postman发送GET请求，URL：
