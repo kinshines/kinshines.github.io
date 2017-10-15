@@ -2,7 +2,7 @@
 layout: post
 title: NuGet常用命令
 author: kinshines
-date:   2016-09-05
+date:   2015-12-15
 categories: develop
 permalink: /archivers/NuGet-Command
 ---
