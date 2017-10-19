@@ -31,7 +31,9 @@ public enum MyEnum : byte
     }
 {% endhighlight %}
 
-其次，在 Views/Shared/DisplayTemplates 文件夹下，新增Partial View，命名为：Enum.cshtml  内容如下：
+其次，在 Views/Shared/DisplayTemplates 文件夹下，新增Partial View
+
+#### Enum.cshtml  应用： @Html.DisplayFor(model => model.MyEnum)
 
 {% highlight java %}
 @model Enum
@@ -72,7 +74,9 @@ else
 
 ### EditorTemplates
 
-#### Enum.cshtml  以select控件的方式加载
+在 Views/Shared/EditorTemplates 文件夹下，新增Partial View
+
+#### Enum.cshtml  以select控件的方式加载，应用： @Html.EditorFor(model => model.MyEnum)
 
 {% highlight java %}
 @model Enum
@@ -87,7 +91,7 @@ else
 }
 {% endhighlight %}
 
-#### Enum-radio.cshtml  以radio-button控件的方式加载
+#### Enum-radio.cshtml  以radio-button控件的方式加载，应用： @Html.EditorFor(model => model.MyEnum, templateName: "Enum-radio")
 
 {% highlight java %}
 @model Enum
