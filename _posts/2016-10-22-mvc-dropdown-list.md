@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mvc中DropDownList 和DropDownListFor的常用方法
+title: MVC中DropDownList 和DropDownListFor的常用方法
 author: kinshines
 date:   2016-10-22
 categories: mvc
