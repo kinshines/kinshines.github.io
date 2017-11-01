@@ -190,7 +190,7 @@ java_command: <unknown>
 
 {% endhighlight %}
 
-需要修改的是第22，23行：
+将第22，23行修改为：
 
-                -Xms512m
-                -Xmx512m
+        -Xms512m
+        -Xmx512m
