@@ -9,7 +9,7 @@ permalink: /archivers/elasticsearch-log4j2
 
 <p class="lead">Elasticsearch默认生成的日志没有文件大小限制，若是集群出现问题，会生成体积惊人的日志文件，甚至会写满磁盘空间，在这里介绍一下修改配置文件，限制日志文件大小最多为10M，最多50个文件，这样便于快速的定位问题并解决 </p>
 
-先看一下默认的日志配置文件内容：
+先看一下默认的日志配置文件内容，位于config目录下的log4j2.properties：
 {% highlight js %}
 status = error
 
