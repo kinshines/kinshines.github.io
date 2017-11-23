@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 泛型委托Action\<T\>和Func\<TResult\>
+title: 泛型委托Action&lt;T&gt和Func&lt;TResult&gt;
 author: kinshines
 date:   2017-11-23
 categories: c#
 permalink: /archivers/generic-delegate-action-func
 ---
 
-<p class="lead">本节笔者将介绍泛型委托Action\<T\>和Fun\<TResult\>两类特殊的委托，这两个特殊的委托是Dot Net Framework自带的。结合lambda表达式，可以在写程序时，简洁代码和提高编码效率。</p>
+<p class="lead">本节笔者将介绍泛型委托Action&lt;T&gt;和Func&lt;TResult&gt;两类特殊的委托，这两个特殊的委托是Dot Net Framework自带的。结合lambda表达式，可以在写程序时，简洁代码和提高编码效率。</p>
 
 ### Action\<T\>和Fun\<TResult\>两个委托的不同点
 1. Action\<T\>只能委托必须是无返回值的方法
