@@ -9,12 +9,12 @@ permalink: /archivers/generic-delegate-action-func
 
 <p class="lead">本节笔者将介绍泛型委托Action&lt;T&gt;和Func&lt;TResult&gt;两类特殊的委托，这两个特殊的委托是Dot Net Framework自带的。结合lambda表达式，可以在写程序时，简洁代码和提高编码效率。</p>
 
-### Action\<T\>和Fun\<TResult\>两个委托的不同点
+### Action\<T\>和Func\<TResult\>两个委托的不同点
 1. Action\<T\>只能委托必须是无返回值的方法
 2. Func\<TResult\>只是委托必须有返回值的方法
 
-### 代码演练
-#### Person类
+### 代码示例
+### Person类
 {% highlight java %}
 class Person
     {
@@ -69,7 +69,7 @@ class Person
     }
 {% endhighlight %}
 
-#### Program类
+### Program类
 
 {% highlight java %}
 
