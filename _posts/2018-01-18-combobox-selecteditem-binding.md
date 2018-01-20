@@ -1,13 +1,13 @@
 ---
 layout: post
-title: ComboBox
+title: ComboBox 控件绑定(Binding) SelectedItem
 author: kinshines
 date:   2018-01-18
 categories: wpf
 permalink: /archivers/combobox-selecteditem-binding
 ---
 
-<p class="lead">在WPF中，使用控件ComboBox Binding方式绑定SelectedItem时，一直绑定不上，下面提供一种解决方案</p>
+<p class="lead">在WPF中，使用控件ComboBox Binding方式绑定SelectedItem时，绑定时可能会无效，下面提供一种解决方案</p>
 
 ### 需求
 比如要做一个打印机列表，从中选择一个打印机（System.Printing），但是以下代码绑定无效：
