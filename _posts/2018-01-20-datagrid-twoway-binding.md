@@ -10,7 +10,7 @@ permalink: /archivers/datagrid-twoway-binding
 <p class="lead">在WPF中，使用控件DataGrid控件的模板列实现双向绑定时，UI的数据更新不到数据源，下面提供一种解决方案</p>
 
 ### xaml
-现在将CheckBox控件作为模板列嵌套进DataGrid中，希望在UI界面中对CheckBox的勾选能更新至数据源，需要注意的是在绑定语句中一定要加上：UpdateSourceTrigger=PropertyChanged，否则更新不能生效：
+现在将CheckBox控件作为模板列嵌套进DataGrid中，希望在UI界面中对CheckBox的勾选能更新至数据源，需要注意的是在绑定语句中一定要加上 UpdateSourceTrigger=PropertyChanged，否则更新不能生效：
 {% highlight xml %}
     <StackPanel>
         <TextBlock x:Name="ShowBBValue" Text="{Binding BB}" />
@@ -29,7 +29,7 @@ permalink: /archivers/datagrid-twoway-binding
     </StackPanel>
 {% endhighlight %}
 
-### C#
+### C\#
 {% highlight java %}
             
     public partial class MainWindow : Window
