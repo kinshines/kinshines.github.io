@@ -2,7 +2,7 @@
 layout: post
 title: 典型git版本分支模型
 author: kinshines
-date:   2018-01-02
+date:   2017-12-12
 categories: develop
 permalink: /archivers/a-successful-git-branching-model
 ---
