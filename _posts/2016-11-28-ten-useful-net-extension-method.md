@@ -4,7 +4,7 @@ title: 10个实用的.NET扩展方法
 author: kinshines
 date:   2016-11-28
 categories: c#
-permalink: /archivers/10-useful-net-extension-method
+permalink: /archivers/ten-useful-net-extension-method
 ---
 
 <p class="lead">扩展方法是C# 3.0的新特性，它可以扩展一个类的方法，也可以使得编码更简单，本文将介绍10个常用的扩展方法</p>
