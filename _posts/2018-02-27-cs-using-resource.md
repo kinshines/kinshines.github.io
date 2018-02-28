@@ -7,14 +7,14 @@ categories: wpf
 permalink: /archivers/cs-using-resource
 ---
 
-<p class="lead">在WPF中通常在xmal前台界面中使用DynamicResource和StaticResource资源，本文将介绍如何在cs后台代码中访问Resource资源</p>
+<p class="lead">在WPF中通常在xmal前台界面中使用DynamicResource和StaticResource资源，本文将记录如何在cs后台代码中访问Resource资源</p>
 
 ### 定义资源
 
 {% highlight java %}
 
-Window.Resources.Add(“backgroundBrush”, new SolidColorBrush(“Yellow”));
-Window.Resources.Add(“borderBrush”, new SolidColorBrush(“Red”));
+Window.Resources.Add("backgroundBrush", new SolidColorBrush("Yellow"));
+Window.Resources.Add("borderBrush", new SolidColorBrush("Red"));
 
 {% endhighlight %}
 
@@ -23,8 +23,8 @@ Window.Resources.Add(“borderBrush”, new SolidColorBrush(“Red”));
 {% highlight java %}
 
 Button button = new Button();
-button.Background = (Brush)button.FindResource(“backgroundBrush”);
-button.BorderBrush = (Brush)button.FindResource(“borderBrush”);
+button.Background = (Brush)button.FindResource("backgroundBrush");
+button.BorderBrush = (Brush)button.FindResource("borderBrush");
 
 {% endhighlight %}
 
@@ -35,8 +35,8 @@ FindResource没找到会异常，或者用TryFindResource方法，没找到返�
 {% highlight java %}
 
 Button button = new Button();
-button.SetResourceReference(Button.BackgroundProperty, “backgroundBrush”);
-button.SetResourceReference(Button.BorderBrushProperty, “borderBrush”);
+button.SetResourceReference(Button.BackgroundProperty, "backgroundBrush");
+button.SetResourceReference(Button.BorderBrushProperty, "borderBrush");
 
 {% endhighlight %}
 
@@ -47,8 +47,8 @@ button.SetResourceReference(Button.BorderBrushProperty, “borderBrush”);
 {% highlight java %}
 
 Button button = new Button();
-button.Background = (Brush)window.Resources[“backgroundBrush”];
-button.BorderBrush = (Brush)window.Resources[“borderBrush”];
+button.Background = (Brush)window.Resources["backgroundBrush"];
+button.BorderBrush = (Brush)window.Resources["borderBrush"];
 
 {% endhighlight %}
 
