@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在C# 代码中访问Resource
+title: The calling thread must be STA, because many UI components require this.
 author: kinshines
 date:   2018-02-28
 categories: wpf
