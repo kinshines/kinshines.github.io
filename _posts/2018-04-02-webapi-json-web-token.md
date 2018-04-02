@@ -1,6 +1,6 @@
 ---
 layout: post
-title: WebAPI 应用Json Web Token（jwt）
+title: WebAPI 应用JSON Web Token(jwt)
 author: kinshines
 date:   2018-04-02
 categories: webapi
@@ -11,9 +11,9 @@ permalink: /archivers/webapi-json-web-token
 
 ### 添加 MessageHandler
 
-首先，新建WebAPI项目，安装package JwtAuthForWebAPI
+首先，新建WebAPI项目，安装 package JwtAuthForWebAPI
 
-        Install-Package JwtAuthForWebAPI -Version 2.0.7
+        Install-Package JwtAuthForWebAPI
 
 然后，在WebApiConfig类中的Register方法中添加：
 {% highlight java %}
@@ -108,7 +108,9 @@ var builder = new SecurityTokenBuilder();
 
 在header中添加key:Authorization,value:Bearer token，注意此处Bearer和token中间有一个空格
 
-假如上一步得到的token为：eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1laWQiOiJjM2FiYjU2Yy1mYTEzLTQ3M2MtODY2NC00MjQzZWIxY2UwYWIiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwiZ3JvdXBzaWQiOiJDR1EiLCJyb2xlIjpbIlVzZXIiLCJBZG1pbiJdLCJpc3MiOiJjb3JwIiwiYXVkIjoiaHR0cDovL3d3dy5leGFtcGxlLmNvbSIsImV4cCI6MTUyMzI2MDYwMCwibmJmIjoxNTIyMzk2NjAwfQ.DoGnM87RfaqB9amFOjxJaODDWimlITHhh7LY5GZEI8Q
+假如上一步得到的token为：
+
+        eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1laWQiOiJjM2FiYjU2Yy1mYTEzLTQ3M2MtODY2NC00MjQzZWIxY2UwYWIiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwiZ3JvdXBzaWQiOiJDR1EiLCJyb2xlIjpbIlVzZXIiLCJBZG1pbiJdLCJpc3MiOiJjb3JwIiwiYXVkIjoiaHR0cDovL3d3dy5leGFtcGxlLmNvbSIsImV4cCI6MTUyMzI2MDYwMCwibmJmIjoxNTIyMzk2NjAwfQ.DoGnM87RfaqB9amFOjxJaODDWimlITHhh7LY5GZEI8Q
 
 则请求如下：
 
@@ -126,7 +128,7 @@ var builder = new SecurityTokenBuilder();
 ### Swagger 配置
 WebAPI 添加权限验证后，Swagger调用也要附加token信息，方式如下：
 
-安装Swagger-Net
+安装package Swagger-Net
 
         Install-Package Swagger-Net
 
