@@ -132,7 +132,7 @@ WebAPI 添加权限验证后，Swagger调用也要附加token信息，方式如�
 
         Install-Package Swagger-Net
 
-修改SwaggerConfig类中Register方法：
+修改SwaggerConfig类中Register中的EnableSwagger方法：
 
 {% highlight java %}
 
@@ -149,3 +149,26 @@ WebAPI 添加权限验证后，Swagger调用也要附加token信息，方式如�
 {% endhighlight %}
 
 在Swagger的Authorization 页面中，添加Value值：Bearer token 即可
+
+在其他版本的Swagger package中，上述的c.ApiKey只支持一个形参，参照如下修改：
+
+修改SwaggerConfig类中Register中的EnableSwagger方法：
+
+{% highlight java %}
+
+    c.ApiKey("Authorization")
+    .Description("Filling bearer token here")
+    .In("header");
+
+{% endhighlight %}
+
+同时，修改SwaggerConfig类中Register中的EnableSwaggerUi方法：
+
+{% highlight java %}
+
+    .EnableSwaggerUi(c =>
+    {
+        c.EnableApiKeySupport("Authorization", "header");
+    });
+
+{% endhighlight %}
