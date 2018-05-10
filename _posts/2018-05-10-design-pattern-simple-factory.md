@@ -10,20 +10,20 @@ permalink: /archivers/design-pattern-simple-factory
 <p class="lead">工厂模式（Factory Pattern）是最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。<br/>
 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。</p>
 
-## 意图
+### 意图
 定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行
-# 主要解决
+### 主要解决
 主要解决接口选择的问题
-## 何时使用
+### 何时使用
 我们明确地计划不同条件下创建不同实例时。
-## 如何解决
+### 如何解决
 让其子类实现工厂接口，返回的也是一个抽象的产品。
-## 关键代码
+### 关键代码
 创建过程在其子类执行。
-## 示例
+### 示例
 设计一个计算器控制台程序，要求输入两个数和运算符号，得到结果
 
-### 步骤1 创建一个接口
+#### 步骤1 创建一个接口
 
 {% highlight java %}
 
@@ -109,7 +109,7 @@ permalink: /archivers/design-pattern-simple-factory
 
 {% endhighlight %}
 
-### 步骤2 创建实现接口的实体类
+#### 步骤2 创建实现接口的实体类
 
 {% highlight java %}
 
@@ -210,7 +210,7 @@ permalink: /archivers/design-pattern-simple-factory
 
 {% endhighlight %}
 
-### 步骤3 创建一个工厂，生成基于给定信息的实体类的对象
+#### 步骤3 创建一个工厂，生成基于给定信息的实体类的对象
 
 {% highlight java %}
 
@@ -267,7 +267,7 @@ public class OperationFactory
 
 {% endhighlight %}
 
-### 步骤4 使用该工厂，通过传递类型信息来获取实体类的对象
+#### 步骤4 使用该工厂，通过传递类型信息来获取实体类的对象
 
 {% highlight java %}
 
