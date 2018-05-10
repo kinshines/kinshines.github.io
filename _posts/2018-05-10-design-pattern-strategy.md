@@ -21,6 +21,80 @@ permalink: /archivers/design-pattern-strategy
 将这些算法封装成一个一个的类，任意地替换。
 ### 关键代码
 实现同一个接口。
+### 基本代码
+
+{% highlight java %}
+
+    //抽象算法类
+    abstract class Strategy
+    {
+        //算法方法
+        public abstract void AlgorithmInterface();
+    }
+    //具体算法A
+    class ConcreteStrategyA : Strategy
+    {
+        //算法A实现方法
+        public override void AlgorithmInterface()
+        {
+            Console.WriteLine("算法A实现");
+        }
+    }
+    //具体算法B
+    class ConcreteStrategyB : Strategy
+    {
+        //算法B实现方法
+        public override void AlgorithmInterface()
+        {
+            Console.WriteLine("算法B实现");
+        }
+    }
+    //具体算法C
+    class ConcreteStrategyC : Strategy
+    {
+        //算法C实现方法
+        public override void AlgorithmInterface()
+        {
+            Console.WriteLine("算法C实现");
+        }
+    }
+    //上下文
+    class Context
+    {
+        Strategy strategy;
+
+        public Context(Strategy strategy)
+        {
+            this.strategy = strategy;
+        }
+        //上下文接口
+        public void ContextInterface()
+        {
+            strategy.AlgorithmInterface();
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Context context;
+
+            context = new Context(new ConcreteStrategyA());
+            context.ContextInterface();
+
+            context = new Context(new ConcreteStrategyB());
+            context.ContextInterface();
+
+            context = new Context(new ConcreteStrategyC());
+            context.ContextInterface();
+
+            Console.Read();
+        }
+    }
+
+{% endhighlight %}
+
 ### 示例
 商场收银软件，营业员根据客户所购买的商品的单价和数量，通过优惠算法，向客户收费
 
