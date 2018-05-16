@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 代理模式
+title: 原型模式
 author: kinshines
 date:   2018-05-16
 categories: design-pattern
