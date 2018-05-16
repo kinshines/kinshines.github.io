@@ -23,6 +23,7 @@ permalink: /archivers/design-pattern-decorator
 ### 关键代码
 1. Component 类充当抽象角色，不应该具体实现。 
 2. 修饰类引用和继承 Component 类，具体扩展类重写父类方法。
+
 ### 基本代码
 
 {% highlight java %}
