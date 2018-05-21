@@ -13,7 +13,7 @@ permalink: /archivers/design-pattern-abstract-factory
 </p>
 
 ### 意图
-工厂方法模式，定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类
+提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
 ### 主要解决
 主要解决接口选择的问题。
 ### 何时使用
@@ -22,121 +22,137 @@ permalink: /archivers/design-pattern-abstract-factory
 在一个产品族里面，定义多个产品。
 ### 关键代码
 在一个工厂里聚合多个同类产品。
-### 与简单工厂的不同之处
-简单工厂模式的最大优点在于工厂类中包含了必要的逻辑判断，根据客户端的选择动态实例化相关的类，对于客户端来说，去除了与具体产品的依赖
-
-抽象工厂方法模式实现时，客户端需要决定实例化哪一个工厂来实现运算类，选择判断的问题还是存在的，也就是说，抽象工厂方法把简单工厂的内部逻辑移到了客户端代码来进行。你想要加功能，本来是该工厂类，而现在修改客户端！
-
+### 与工厂模式的不同之处
 抽象工厂的更大意义在于，使用抽象工厂可以在一个产品族里面，定义多个产品，在一个工厂里聚合多个同类产品。
 
 ### 示例
-使用抽象工厂做一个计算器
+使用抽象工厂实现数据库之间切换
 
-#### 步骤1 创建一个接口
+#### 步骤1 创建产品接口
 
 {% highlight java %}
 
-    /// <summary>
-    /// 运算类
-    /// </summary>
-    class Operation
+    class User
     {
-        private double _numberA = 0;
-        private double _numberB = 0;
-
-        public double NumberA
+        private int _id;
+        public int ID
         {
-            get { return _numberA; }
-            set { _numberA = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
-        public double NumberB
+        private string _name;
+        public string Name
         {
-            get { return _numberB; }
-            set { _numberB = value; }
+            get { return _name; }
+            set { _name = value; }
+        }
+    }
+
+    class Department
+    {
+        private int _id;
+        public int ID
+        {
+            get { return _id; }
+            set { _id = value; }
         }
 
-        /// <summary>
-        /// 得到运算结果
-        /// </summary>
-        /// <returns></returns>
-        public virtual double GetResult()
+        private string _deptName;
+        public string DeptName
         {
-            double result = 0;
-            return result;
+            get { return _deptName; }
+            set { _deptName = value; }
+        }
+    }
+
+    interface IUser
+    {
+        void Insert(User user);
+
+        User GetUser(int id);
+    }
+
+    interface IDepartment
+    {
+        void Insert(Department department);
+
+        Department GetDepartment(int id);
+    }
+
+{% endhighlight %}
+
+#### 步骤2 实现该产品接口的实体产品
+
+{% highlight java %}
+
+    class SqlserverUser : IUser
+    {
+        public void Insert(User user)
+        {
+            Console.WriteLine("在Sqlserver中给User表增加一条记录");
+        }
+
+        public User GetUser(int id)
+        {
+            Console.WriteLine("在Sqlserver中根据ID得到User表一条记录");
+            return null;
+        }
+    }
+
+    class AccessUser : IUser
+    {
+        public void Insert(User user)
+        {
+            Console.WriteLine("在Access中给User表增加一条记录");
+        }
+
+        public User GetUser(int id)
+        {
+            Console.WriteLine("在Access中根据ID得到User表一条记录");
+            return null;
+        }
+    }
+
+    class SqlserverDepartment : IDepartment
+    {
+        public void Insert(Department department)
+        {
+            Console.WriteLine("在Sqlserver中给Department表增加一条记录");
+        }
+
+        public Department GetDepartment(int id)
+        {
+            Console.WriteLine("在Sqlserver中根据ID得到Department表一条记录");
+            return null;
+        }
+    }
+
+    class AccessDepartment : IDepartment
+    {
+        public void Insert(Department department)
+        {
+            Console.WriteLine("在Access中给Department表增加一条记录");
+        }
+
+        public Department GetDepartment(int id)
+        {
+            Console.WriteLine("在Access中根据ID得到Department表一条记录");
+            return null;
         }
     }
 
 {% endhighlight %}
 
-#### 步骤2 实现该接口的实体类
+#### 步骤3 创建抽象工厂
 
 {% highlight java %}
 
-    /// <summary>
-    /// 加法类
-    /// </summary>
-    class OperationAdd : Operation
-    {
-        public override double GetResult()
-        {
-            double result = 0;
-            result = NumberA + NumberB;
-            return result;
-        }
-    }
-
-    /// <summary>
-    /// 减法类
-    /// </summary>
-    class OperationSub : Operation
-    {
-        public override double GetResult()
-        {
-            double result = 0;
-            result = NumberA - NumberB;
-            return result;
-        }
-    }
-    /// <summary>
-    /// 乘法类
-    /// </summary>
-    class OperationMul : Operation
-    {
-        public override double GetResult()
-        {
-            double result = 0;
-            result = NumberA * NumberB;
-            return result;
-        }
-    }
-    /// <summary>
-    /// 除法类
-    /// </summary>
-    class OperationDiv : Operation
-    {
-        public override double GetResult()
-        {
-            double result = 0;
-            if (NumberB == 0)
-                throw new Exception("除数不能为0。");
-            result = NumberA / NumberB;
-            return result;
-        }
-    }
-
-{% endhighlight %}
-
-#### 步骤3 创建抽象类来获取工厂
-
-{% highlight java %}
-
-    /// <summary>
-    /// 工厂方法
-    /// </summary>
     interface IFactory
     {
-        Operation CreateOperation();
+        IUser CreateUser();
+
+        IDepartment CreateDepartment();
     }
 
 {% endhighlight %}
@@ -145,47 +161,29 @@ permalink: /archivers/design-pattern-abstract-factory
 
 {% highlight java %}
 
-    /// <summary>
-    /// 专门负责生产“+”的工厂
-    /// </summary>
-    class AddFactory : IFactory
+    class SqlServerFactory : IFactory
     {
-        public Operation CreateOperation()
+        public IUser CreateUser()
         {
-            return new OperationAdd();
+            return new SqlserverUser();
+        }
+
+        public IDepartment CreateDepartment()
+        {
+            return new SqlserverDepartment();
         }
     }
 
-    /// <summary>
-    /// 专门负责生产“-”的工厂
-    /// </summary>
-    class SubFactory : IFactory
+    class AccessFactory : IFactory
     {
-        public Operation CreateOperation()
+        public IUser CreateUser()
         {
-            return new OperationSub();
+            return new AccessUser();
         }
-    }
 
-    /// <summary>
-    /// 专门负责生产“*”的工厂
-    /// </summary>
-    class MulFactory : IFactory
-    {
-        public Operation CreateOperation()
+        public IDepartment CreateDepartment()
         {
-            return new OperationMul();
-        }
-    }
-
-    /// <summary>
-    /// 专门负责生产“/”的工厂
-    /// </summary>
-    class DivFactory : IFactory
-    {
-        public Operation CreateOperation()
-        {
-            return new OperationDiv();
+            return new AccessDepartment();
         }
     }
 
