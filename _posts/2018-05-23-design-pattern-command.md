@@ -97,7 +97,7 @@ permalink: /archivers/design-pattern-command
 {% endhighlight %}
 
 ### 示例
-不同的手机品牌运行软件
+去餐厅通过服务员点餐
 
 #### 步骤1 创建抽象命令类
 
