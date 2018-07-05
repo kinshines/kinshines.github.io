@@ -58,7 +58,7 @@ default-character-set = utf8mb4
 
 注意，里面的 basedir 是我本地的安装目录，datadir 是我数据库数据文件要存放的位置，各项配置需要根据自己的环境进行配置。
 
-查看所有的配置项，可参考：[refman](https://dev.mysql.com/doc/refman/8.0/en/mysqld-option-tables.html)
+查看所有的配置项，可参考：[参考mysqld-option-tables](https://dev.mysql.com/doc/refman/8.0/en/mysqld-option-tables.html)
 
 ### 初始化数据库
 在MySQL安装目录的 bin 目录下执行命令：
@@ -69,13 +69,13 @@ default-character-set = utf8mb4
 
         2018-04-20T02:35:01.507037Z 0 [Warning] [MY-010915] [Server] 'NO_ZERO_DATE', 'NO_ZERO_IN_DATE' and 'ERROR_FOR_DIVISION_BY_ZERO' sql modes should be used with strict mode. They will be merged with strict mode in a future release.
         2018-04-20T02:35:01.507640Z 0 [System] [MY-013169] [Server] D:\Program Files\mysql-8.0.11-winx64\bin\mysqld.exe (mysqld 8.0.11) initializing of server in progress as process 11064
-        2018-04-20T02:35:01.508173Z 0 [ERROR] [MY-010340] [Server] Error message file 'D:\Program Files\mysql-8.0.11-winx64\share\english\errmsg.sys' had only 1090 error messages, but it should contain at least 4512 error messages. Check that the above file is the right version for this program!
+        2018-04-20T02:35:01.508173Z 0 [ERROR] [MY-010340] [Server] Error message file 'D:\Program Files\mysql-8.0.11-winx64\data\share\english\errmsg.sys' had only 1090 error messages, but it should contain at least 4512 error messages. Check that the above file is the right version for this program!
         2018-04-20T02:35:05.464644Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: APWCY5ws&hjQ
         2018-04-20T02:35:07.017280Z 0 [System] [MY-013170] [Server] D:\Program Files\mysql-8.0.11-winx64\bin\mysqld.exe (mysqld 8.0.11) initializing of server has completed
 
 其中，第4行的“APWCY5ws&hjQ”就是初始密码，在没有更改密码前，需要记住这个密码，后续登录需要用到，要是你手贱，关快了，或者没记住，那也没事，删掉初始化的 datadir 目录，再执行一遍初始化命令，又会重新生成的。
 
-[参考](https://dev.mysql.com/doc/refman/8.0/en/data-directory-initialization-mysqld.html)
+[参考data-directory-initialization-mysqld](https://dev.mysql.com/doc/refman/8.0/en/data-directory-initialization-mysqld.html)
 
 ### 安装服务
 在MySQL安装目录的 bin 目录下执行命令：
@@ -86,7 +86,7 @@ default-character-set = utf8mb4
 
 安装完成之后，就可以通过命令net start mysql启动MySQL的服务了。
 
-[参考](https://dev.mysql.com/doc/refman/8.0/en/windows-start-service.html)
+[参考windows-start-service](https://dev.mysql.com/doc/refman/8.0/en/windows-start-service.html)
 
 ### 更改密码和密码认证插件
 在MySQL安装目录的 bin 目录下执行命令：
@@ -114,6 +114,6 @@ default-character-set = utf8mb4
         [mysqld]
         default_authentication_plugin=mysql_native_password
 
-[参考](https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password)
+[参考upgrading-from-previous-series](https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password)
 
 后续的添加环境变量以及其他的SQL操作与之前版本相同，就不再赘述，链接[MySQL 使用汇总](https://kinshines.github.io/archivers/mysql-summary)
