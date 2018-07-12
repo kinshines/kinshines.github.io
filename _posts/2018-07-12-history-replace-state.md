@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 利用HTML5的HISTORY.REPLACESTATE修改当前页面的URL
+title: 利用HTML5的history.replaceState修改当前页面的URL
 author: kinshines
 date:   2018-07-12
 categories: js
@@ -38,7 +38,7 @@ if (history.replaceState) {
 
 页面可以设置成no-cache，当用户后退时，浏览器会重新请求带搜索条件的URL，后台根据搜索条件，把对应的结果页面呈现出来，从而达到记住搜索条件和结果的目的。
 
-## replaceState使用实例
+### replaceState使用实例
 在bootstrap-datepicker的[Demo网页](https://uxsolutions.github.io/bootstrap-datepicker/?markup=input&format=&weekStart=&startDate=&endDate=&startView=0&minViewMode=0&maxViewMode=4&todayBtn=false&clearBtn=false&language=en&orientation=auto&multidate=&multidateSeparator=&keyboardNavigation=on&forceParse=on#sandbox)上，就很巧妙的用history.replaceState实现对url的修改：
 
 {% highlight js %}
@@ -52,7 +52,7 @@ function update_url(){
 
 {% endhighlight %}
 
-## 利用HISTORY.PUSHSTATE方法禁用浏览器的后退按钮
+### 利用history.pushState方法禁用浏览器的后退按钮
 同样的，我们可以利用其中的API来达到禁用浏览器后退按钮的功能。
 
 {% highlight js %}
