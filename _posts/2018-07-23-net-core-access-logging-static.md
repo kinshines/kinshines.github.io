@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 单例类(Singleton)对比静态类(Static)
+title: .NET Core项目静态类中取得内置Logger
 author: kinshines
 date:   2018-07-23
 categories: core
-permalink: /archivers/net-core-access-logging-api-outside-mvc-controller
+permalink: /archivers/net-core-access-logging-static
 ---
 
 <p class="lead">在.NET Core项目中，微软提供了内置的Logger,通过依赖注入的方式，注入到service层和controller层，使用起来极为方便。但是对于大多数使用过.NET Framework的人来说，更习惯的日志记录方式是通过静态类来实现，那么在静态类中如何使用内置的logger呢？本文将做以下探讨
