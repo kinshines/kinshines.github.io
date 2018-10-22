@@ -29,6 +29,10 @@ permalink: /archivers/npm-config
     npm config ls -l
     npm config list
 
+#### 验证测试
+
+    npm install express -g // -g意思是安装到global目录下，也就是上面设置的XXX\nodejs\node_global
+
 ### 配置文件方式
 在用户主目录下添加文件.npmrc
 
