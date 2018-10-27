@@ -98,7 +98,7 @@ toctree 支持多级目录,比如要想将python.rst,swift.rst笔记在不同的
 在构建过程中出现任何问题，都可以登录readthedoc找到项目中的”构建”页查看构建历史，点击任何一条查看详细日志
 
 ### FAQ
-build的时候出现错误：! Package inputenc Error: Unicode char 我 (U+6211)
+#### build的时候出现错误：! Package inputenc Error: Unicode char 我 (U+6211)
 
 解决办法，在conf.py中添加:
 
@@ -121,5 +121,26 @@ latex_elements={# The paper size ('letterpaper' or 'a4paper').
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 """}
+
+{% endhighlight %}
+
+#### WARNING: Pygments lexer name u’python run.py’ is not known
+
+解决办法，写代码的时候别用’’’python run.py这样的格式，不支持
+
+#### WARNING: nonlocal image URI found
+
+解决办法，更改conf.py
+
+{% highlight txt %}
+
+import sphinx.environment
+from docutils.utils import get_source_line
+
+def _warn_node(self, msg, node, **kwargs):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node), **kwargs)
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
 
 {% endhighlight %}
