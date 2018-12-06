@@ -100,13 +100,16 @@ namespace NLogUtility
     -->
     <target xsi:type="ColoredConsole" name="console"
             layout="${time} ${message:exceptionSeparator=|:withException=true}${newline}*****************************" />
-    <target xsi:type="File" name="error" encoding="utf-8" fileName="${logDirectory}\${shortdate}.log"
+    <target xsi:type="File" name="error" encoding="utf-8" fileName="${logDirectory}\error\${logger}.log"
             layout="${time} ${message:exceptionSeparator=|:withException=true}${newline}*****************************" 
-            archiveAboveSize="10485760" archiveNumbering="Sequence" />
-    <target xsi:type="File" name="file" encoding="utf-8" fileName="${logDirectory}\${logger}_${shortdate}.log"
-            layout="${time} ${uppercase:${level}} ${message}" archiveAboveSize="10485760" archiveNumbering="Sequence" />
-    <target xsi:type="File" name="pure" encoding="utf-8" fileName="${logDirectory}\${logger}.log"
-            layout="${message}" archiveAboveSize="10485760" archiveNumbering="Sequence" />
+            archiveAboveSize="10485760" archiveEvery="Day" archiveNumbering="DateAndSequence" archiveDateFormat="yyyy-MM-dd"
+            archiveFileName="${logDirectory\error\${logger}_{#}.log" maxArchiveFiles="30" />
+    <target xsi:type="File" name="file" encoding="utf-8" fileName="${logDirectory}\${logger}\${logger}.log"
+            layout="${date:format=yyyy-MM-dd HH\:mm\:ss.fff}  ${threadid}  ${message}" archiveEvery="Day" archiveNumbering="Date" archiveDateFormat="yyyy-MM-dd"
+            archiveFileName="${logDirectory}\${logger}\${logger}_{#}.log" maxArchiveFiles="30" cleanupFileName="true" />
+    <target xsi:type="File" name="pure" encoding="utf-8" fileName="${logDirectory}\${logger}\${logger}.log"
+            layout="${message}" archiveEvery="Day" archiveNumbering="Date" archiveDateFormat="yyyy-MM-dd"
+            archiveFileName="${logDirectory}\${logger}\${logger}_{#}.log" maxArchiveFiles="30" cleanupFileName="true" />
     <target xsi:type="Mail" name="alert" layout="${date}${newline}${message:exceptionSeparator=|:withException=true}${newline}"
             replaceNewlineWithBrTagInHtml="true" subject="Message from ${ApplicationName} on ${machinename}"
             smtpServer="smtp.exmail.qq.com" smtpAuthentication="Basic"
