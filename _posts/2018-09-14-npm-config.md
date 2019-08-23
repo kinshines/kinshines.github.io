@@ -30,13 +30,15 @@ permalink: /archivers/npm-config
     npm config list
 
 ### 配置文件方式
-在用户主目录下添加文件.npmrc
+在用户主目录下添加文件
+    
+    .npmrc
 
 添加文件内容
 
-registry=https://registry.npm.taobao.org/
-prefix=C:\Program Files\nodejs\node_global
-cache=C:\Program Files\nodejs\node_cache
+    registry=https://registry.npm.taobao.org/
+    prefix=C:\Program Files\nodejs\node_global
+    cache=C:\Program Files\nodejs\node_cache
 
 ### 验证测试
 
