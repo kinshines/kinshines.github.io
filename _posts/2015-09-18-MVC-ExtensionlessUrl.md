@@ -11,7 +11,7 @@ MVC 5 应用部署到Windows Server 2008/IIS 7后，运行可能会遇到以下�
 HTTP Error 403.14 - Forbidden The Web server is configured to not list the contents of this directory.
 网上有种解决方案是web.config中配置：
 
-{% highlight js %}
+{% highlight xml %}
 <modules runAllManagedModulesForAllRequests="true">
 {% endhighlight %}
 
@@ -21,7 +21,7 @@ HTTP Error 403.14 - Forbidden The Web server is configured to not list the conte
 [更新是可使某些 IIS 7.0 或 IIS 7.5 处理程序来处理请求的 Url 不以句号结尾](https://support.microsoft.com/zh-cn/help/980368/a-update-is-available-that-enables-certain-iis-7.0-or-iis-7.5-handlers-to-handle-requests-whose-urls-do-not-end-with-a-period)
 
 之后在web.config中配置：
-{% highlight js %}
+{% highlight xml %}
 
 <configuration>
   <system.webServer>
