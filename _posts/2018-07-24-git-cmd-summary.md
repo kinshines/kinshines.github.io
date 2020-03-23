@@ -22,6 +22,13 @@ permalink: /archivers/git-cmd-summary
 
 	git config --global user.email "xxx@xxx.com"              
 
+为项目单独配置用户名和邮箱
+
+	git config --global --unset user.name
+    git config --global --unset user.email
+	git config  user.email "xxx@xxx.com"
+    git config  user.name "xxx"
+
 git status等命令自动着色
 
 	git config --global color.ui true                         
