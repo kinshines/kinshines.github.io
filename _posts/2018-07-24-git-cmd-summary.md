@@ -29,6 +29,10 @@ permalink: /archivers/git-cmd-summary
 	git config  user.email "xxx@xxx.com"
     git config  user.name "xxx"
 
+设置让VSCode记住git账号和密码
+
+	git config --global credential.helper store
+
 git status等命令自动着色
 
 	git config --global color.ui true                         
