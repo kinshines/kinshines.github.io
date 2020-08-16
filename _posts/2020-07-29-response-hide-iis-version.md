@@ -10,12 +10,12 @@ permalink: /archivers/response-hide-iis-version
 <p class="lead">IIS安全基线要求response中不能泄露版本信息，下文介绍如何配置</p>
 在IIS+ASP.NET的运行环境，默认情况下会输出以下的响应头（Response Headers）：
 
-                          Server    Microsoft-IIS/8.0
-       X-AspNet-Version    4.0.30319
-X-AspNetMvc-Version    5.1
-             X-Powered-By    ASP.NET
+        Server    Microsoft-IIS/8.0
+        X-AspNet-Version    4.0.30319
+        X-AspNetMvc-Version    5.1
+        X-Powered-By    ASP.NET
 
-###移除Sever
+### 移除Sever
 1.下载重写模块
 [URL Rewrite](https://www.iis.net/downloads/microsoft/url-rewrite)
 
@@ -35,14 +35,14 @@ X-AspNetMvc-Version    5.1
     </rewrite>
 {% endhighlight %}
 
-###移除X-AspNet-Version
+### 移除X-AspNet-Version
 
 在web.config的<httpRuntime>中添加enableVersionHeader="false"：
 {% highlight xml %}
 <httpRuntime enableVersionHeader="false" />
 {% endhighlight %}
 
-###移除X-AspNetMvc-Version
+### 移除X-AspNetMvc-Version
 
 在 Application_Start() 中添加如下代码：
 
@@ -53,5 +53,5 @@ protected void Application_Start()
 }
 {% endhighlight %}
 
-###移除X-Powered-By
+### 移除X-Powered-By
 在IIS Manager功能视图中，IIS=>HTTP 响应标头，移除X-Powered-By
